@@ -1,0 +1,170 @@
+Sending build context to Docker daemon  14.91MB
+Step 1/56 : FROM ubuntu:16.04
+ ---> 96da9143fb18
+Step 2/56 : LABEL base_image="ubuntu:16.04"
+ ---> Using cache
+ ---> 86b20ec55c87
+Step 3/56 : LABEL about.summary="RNA-seq pipeline (Pfizer confidential)"
+ ---> Using cache
+ ---> a7e5a3ff90ae
+Step 4/56 : LABEL about.license="Pfizer"
+ ---> Using cache
+ ---> 562355c96e4c
+Step 5/56 : LABEL about.tags="Genomics"
+ ---> Using cache
+ ---> 33631af5497a
+Step 6/56 : MAINTAINER Xiaochuan (David) Liu <xiaochuan.liu@pfizer.com>
+ ---> Using cache
+ ---> 4b4cc39e00ba
+Step 7/56 : ENV DEBIAN_FRONTEND=noninteractive
+ ---> Using cache
+ ---> d06b2f45ab57
+Step 8/56 : RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
+ ---> Using cache
+ ---> a6055eda673c
+Step 9/56 : RUN apt-get install -y tzdata
+ ---> Using cache
+ ---> 1e16bc486cf5
+Step 10/56 : RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+ ---> Using cache
+ ---> c5465c097a45
+Step 11/56 : RUN dpkg-reconfigure -f noninteractive tzdata
+ ---> Using cache
+ ---> 37958a142640
+Step 12/56 : RUN  apt-get install --yes  default-jre perl python build-essential gcc-multilib   make gcc g++ zlib1g-dev zlib1g unzip zip wget
+ ---> Using cache
+ ---> 15334719fe04
+Step 13/56 : RUN wget https://repo.anaconda.com/archive/Anaconda2-5.2.0-Linux-x86_64.sh -O Anaconda.sh
+ ---> Using cache
+ ---> 8a6faa596608
+Step 14/56 : RUN bash Anaconda.sh -b -f -p /usr/local
+ ---> Using cache
+ ---> c5d02d21a765
+Step 15/56 : RUN bash /usr/local/bin/activate
+ ---> Using cache
+ ---> 38661b92f221
+Step 16/56 : RUN rm Anaconda.sh
+ ---> Using cache
+ ---> dcf4efa01a39
+Step 17/56 : RUN conda update -n base conda
+ ---> Using cache
+ ---> 93f10a99f708
+Step 18/56 : RUN conda config --system --add channels conda-forge
+ ---> Using cache
+ ---> 379293bbc87c
+Step 19/56 : RUN conda config --system --append channels bioconda
+ ---> Using cache
+ ---> 4d4ea275f480
+Step 20/56 : RUN conda config --system --append channels r
+ ---> Using cache
+ ---> 7d8eefd10c82
+Step 21/56 : RUN conda install -c conda-forge r-base=3.4.1
+ ---> Using cache
+ ---> 831c0cfe195f
+Step 22/56 : RUN conda install -c conda-forge r-devtools=1.13.6
+ ---> Using cache
+ ---> aa3ec11286da
+Step 23/56 : RUN conda install -c conda-forge spyder=3.2.8
+ ---> Using cache
+ ---> 07a02c963cc4
+Step 24/56 : RUN conda install -c conda-forge r-reshape2=1.4.3
+ ---> Using cache
+ ---> 9f6ef8e0f06d
+Step 25/56 : RUN conda install -c conda-forge r-ggplot2=3.0.0
+ ---> Using cache
+ ---> 987d1bee130c
+Step 26/56 : RUN conda install -c conda-forge r-gridextra=2.3
+ ---> Using cache
+ ---> 17530b1dbd17
+Step 27/56 : RUN conda install -c conda-forge r-gridbase=0.4_7
+ ---> Using cache
+ ---> 0e761dad5ec3
+Step 28/56 : RUN conda install -c conda-forge r-gtable=0.2.0
+ ---> Using cache
+ ---> 628f9f7cc1d2
+Step 29/56 : RUN conda install -c conda-forge r-rcolorbrewer=1.1_2
+ ---> Using cache
+ ---> 7d69ddc34c43
+Step 30/56 : RUN conda install -c conda-forge r-gplots=3.0.1
+ ---> Using cache
+ ---> 1d139be54cbd
+Step 31/56 : RUN conda install -c bioconda bioconductor-complexheatmap=1.18.1
+ ---> Using cache
+ ---> f5bdf8f43dbe
+Step 32/56 : RUN conda install -c conda-forge r-circlize=0.4.4
+ ---> Using cache
+ ---> e89370c4b88a
+Step 33/56 : RUN conda install -c conda-forge r-venndiagram=1.6.20
+ ---> Using cache
+ ---> 88870b7afb40
+Step 34/56 : RUN conda install -c conda-forge r-survival=2.42_6
+ ---> Using cache
+ ---> fafc21b44fb5
+Step 35/56 : RUN conda install -c conda-forge r-formula=1.2_3
+ ---> Using cache
+ ---> 641d70d933fb
+Step 36/56 : RUN conda install -c conda-forge r-latticeextra=0.6_28
+ ---> Using cache
+ ---> f7b8a9ce4195
+Step 37/56 : RUN conda install -c conda-forge r-cluster=2.0.7_1
+ ---> Using cache
+ ---> 151eea20d059
+Step 38/56 : RUN conda install -c conda-forge r-rpart=4.1_13
+ ---> Using cache
+ ---> d8d37759e553
+Step 39/56 : RUN conda install -c conda-forge r-nnet=7.3_12
+ ---> Using cache
+ ---> 11a30c997ffe
+Step 40/56 : RUN conda install -c conda-forge r-acepack=1.4.1
+ ---> Using cache
+ ---> 250cf6930568
+Step 41/56 : RUN conda install -c conda-forge r-foreign=0.8_71
+ ---> Using cache
+ ---> 60d0959cf21f
+Step 42/56 : RUN conda install -c conda-forge r-data.table=1.11.4
+ ---> Using cache
+ ---> 7e7df0a74006
+Step 43/56 : RUN conda install -c conda-forge r-htmltable=1.12
+ ---> Using cache
+ ---> a72f03169ff0
+Step 44/56 : RUN conda install -c conda-forge r-viridislite=0.3.0
+ ---> Using cache
+ ---> f299ff4a6756
+Step 45/56 : RUN conda install -c conda-forge r-htmltools=0.3.6
+ ---> Using cache
+ ---> d861d093e266
+Step 46/56 : RUN conda install -c conda-forge r-base64enc=0.1_3
+ ---> Using cache
+ ---> c8abf08d2463
+Step 47/56 : RUN conda install -c conda-forge r-hmisc=4.1_1
+ ---> Using cache
+ ---> 0b5cd26028af
+Step 48/56 : RUN conda install -c conda-forge r-knitr=1.20
+ ---> Using cache
+ ---> 7496a55679dd
+Step 49/56 : RUN wget https://cran.r-project.org/src/contrib/tables_0.8.8.tar.gz
+ ---> Using cache
+ ---> db9f019b44f6
+Step 50/56 : RUN R CMD INSTALL tables_0.8.8.tar.gz
+ ---> Using cache
+ ---> 8197a805e8f3
+Step 51/56 : RUN rm tables_0.8.8.tar.gz
+ ---> Using cache
+ ---> 4c3a0e9279e0
+Step 52/56 : ENV LANG=C
+ ---> Using cache
+ ---> 0431471c6ff2
+Step 53/56 : RUN mkdir -p  /RNASeq
+ ---> Using cache
+ ---> 850980f73f9c
+Step 54/56 : COPY ngsdb  /RNASeq/ngsdb
+ ---> Using cache
+ ---> 721b7daa353f
+Step 55/56 : COPY scripts  /RNASeq/scripts
+ ---> Using cache
+ ---> e265a85a0c01
+Step 56/56 : COPY apps  /RNASeq/apps
+ ---> Using cache
+ ---> df56212361e4
+Successfully built df56212361e4
+Successfully tagged analysis_pipeline.app:latest

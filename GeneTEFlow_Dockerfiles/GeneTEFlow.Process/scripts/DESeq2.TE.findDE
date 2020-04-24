@@ -1,0 +1,78 @@
+library(readr)
+library(plyr)
+library(DESeq2)
+
+
+args <- commandArgs(TRUE)
+suppressPackageStartupMessages(library(DESeq2,warn.conflicts = FALSE,quietly=TRUE))
+countMatrixFile<-args[1]   # input using the raw count matrix .rda
+sampleinfoFile<-args[2]   #sample information file
+samplecompareFile<-args[3] # group comparison design, constrast table
+compare.group<-args[4]  #  comparison group label, an RNAseq may have subgroups for comparison, use "all" for default
+
+data<-readRDS(countMatrixFile)
+sampleinfo<-read.table(sampleinfoFile, header=TRUE, sep="\t", stringsAsFactors=F )
+samplecompare<-read.table(samplecompareFile, header=T, sep="\t", check.names=F, stringsAsFactors=F)
+
+
+comparegroup<-c(samplecompare$Group2, samplecompare$Group1)
+comparesampleinfo<-sampleinfo[sampleinfo$SampleGroup %in% comparegroup,]
+comparesample<-comparesampleinfo$SampleName
+
+totalcomp<-nrow(samplecompare)
+
+names(data) = gsub(".TE.results", "", names(data), perl=TRUE)
+
+# subset data
+data<-data[,comparesample]
+
+# filter data
+#rs=rowSums(data)
+#use =  (rs > 10)
+rowMax<-apply( data, 1, max)
+use =  (rowMax >=5 )
+data=data[use,]
+
+
+
+sampleids<-comparesampleinfo$SampleName
+data.sampleid<-names(data)
+data<-as.matrix(round(data, digits=0))
+colData<-data.frame(row.names=data.sampleid, SampleName=data.sampleid)     
+colData<-join(colData, comparesampleinfo, by="SampleName")
+colData$SampleGroup=factor(colData$SampleGroup)
+row.names(colData)<-colData$SampleName
+dds<-DESeqDataSetFromMatrix(countData = data,
+                                                        colData = colData,
+                                                        design = ~ SampleGroup)
+dds<-DESeq(dds)
+norm.counts<-counts(dds, normalized=TRUE)
+samplename<-comparesampleinfo$SampleName
+sampleid<-comparesampleinfo$SampleName
+count.m.id<-colnames(norm.counts)
+count.m.name<-samplename[match(count.m.id,sampleid)] 
+colnames(norm.counts) <- count.m.name 
+res.all<-data.frame(row.names=row.names(data))
+#for ( i in 1:1)
+for ( i in 1:totalcomp )
+{
+        group1<-samplecompare$Group1[i]
+        group2<-samplecompare$Group2[i]
+        groups<-c(group1, group2)
+        res<-results(dds, contrast=c("SampleGroup", group2, group1))
+        res<-as.data.frame(res)
+
+        baseMeanPerLvl <- sapply( c(group1, group2), function(lvl) rowMeans( counts(dds,normalized=TRUE)[,dds$SampleGroup == lvl] ) )
+        outresult<-data.frame(baseMeanPerLvl[,c(1,2)], res[,c(2,5,6)])
+        names(outresult)[1:2]<-paste(names(outresult)[1:2], ".Mean", sep="")
+        name.prefix<-paste(group2, ".vs.", group1, sep="")
+        names(outresult)[3:5]<-paste(name.prefix, c( "Log2FC", "pval", "padj"), sep=".")
+        res.all<-cbind(res.all, outresult)
+}
+
+
+output<-cbind(res.all, norm.counts)
+outputfile<-paste(compare.group, ".deseq2.TE.out.txt", sep="")
+write.table(file=outputfile, cbind(TEid=row.names(output), output), row.name=F, sep="\t", quote=F)
+
+

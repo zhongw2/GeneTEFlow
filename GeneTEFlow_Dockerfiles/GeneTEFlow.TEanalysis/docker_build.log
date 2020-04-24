@@ -1,0 +1,868 @@
+Sending build context to Docker daemon  100.9kB
+Step 1/20 : FROM	continuumio/miniconda3
+latest: Pulling from continuumio/miniconda3
+b8f262c62ec6: Pulling fs layer
+0a43c0154f16: Pulling fs layer
+906d7b5da8fb: Pulling fs layer
+b8f262c62ec6: Verifying Checksum
+b8f262c62ec6: Download complete
+b8f262c62ec6: Pull complete
+906d7b5da8fb: Verifying Checksum
+906d7b5da8fb: Download complete
+0a43c0154f16: Verifying Checksum
+0a43c0154f16: Download complete
+0a43c0154f16: Pull complete
+906d7b5da8fb: Pull complete
+Digest: sha256:6c979670684d970f8ba934bf9b7bf42e77c30a22eb96af1f30a039b484719159
+Status: Downloaded newer image for continuumio/miniconda3:latest
+ ---> 406f2b43ea59
+Step 2/20 : LABEL base_image="/miniconda3"
+ ---> Running in 5561c3e8ae4e
+Removing intermediate container 5561c3e8ae4e
+ ---> 70032763ddd6
+Step 3/20 : LABEL about.summary="locus-specific regulation of interspersed repeat expression"
+ ---> Running in 83f7e522da49
+Removing intermediate container 83f7e522da49
+ ---> 1b54f51c5ca7
+Step 4/20 : LABEL about.license="Pfizer"
+ ---> Running in 569a438d338a
+Removing intermediate container 569a438d338a
+ ---> 4662d6965b8d
+Step 5/20 : LABEL about.tags="Genomics"
+ ---> Running in 65110aa343e4
+Removing intermediate container 65110aa343e4
+ ---> 95891b085293
+Step 6/20 : MAINTAINER Xiaochuan (David) Liu <xiaochuan.liu@pfizer.com>
+ ---> Running in 7aef662fc5f6
+Removing intermediate container 7aef662fc5f6
+ ---> de4e82e4e159
+Step 7/20 : ENV DEBIAN_FRONTEND=noninteractive
+ ---> Running in 06eb5f5a1d53
+Removing intermediate container 06eb5f5a1d53
+ ---> c57e4ac5ffd2
+Step 8/20 : RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
+ ---> Running in f34b3e97999e
+Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+Get:2 http://deb.debian.org/debian buster-updates InRelease [49.3 kB]
+Get:3 http://deb.debian.org/debian buster/main amd64 Packages [7908 kB]
+Get:4 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+Get:5 http://security-cdn.debian.org/debian-security buster/updates/main amd64 Packages [175 kB]
+Fetched 8319 kB in 3s (2796 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libapt-inst2.0
+The following NEW packages will be installed:
+  apt-utils libapt-inst2.0
+0 upgraded, 2 newly installed, 0 to remove and 27 not upgraded.
+Need to get 625 kB of archives.
+After this operation, 1655 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian buster/main amd64 libapt-inst2.0 amd64 1.8.2 [204 kB]
+Get:2 http://deb.debian.org/debian buster/main amd64 apt-utils amd64 1.8.2 [421 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 625 kB in 0s (4310 kB/s)
+Selecting previously unselected package libapt-inst2.0:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12557 files and directories currently installed.)
+Preparing to unpack .../libapt-inst2.0_1.8.2_amd64.deb ...
+Unpacking libapt-inst2.0:amd64 (1.8.2) ...
+Selecting previously unselected package apt-utils.
+Preparing to unpack .../apt-utils_1.8.2_amd64.deb ...
+Unpacking apt-utils (1.8.2) ...
+Setting up libapt-inst2.0:amd64 (1.8.2) ...
+Setting up apt-utils (1.8.2) ...
+Processing triggers for libc-bin (2.28-10) ...
+Removing intermediate container f34b3e97999e
+ ---> 66b33cc46d65
+Step 9/20 : RUN apt-get install -y tzdata
+ ---> Running in 460547b10856
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages will be upgraded:
+  tzdata
+1 upgraded, 0 newly installed, 0 to remove and 26 not upgraded.
+Need to get 261 kB of archives.
+After this operation, 1024 B of additional disk space will be used.
+Get:1 http://deb.debian.org/debian buster/main amd64 tzdata all 2019c-0+deb10u1 [261 kB]
+Preconfiguring packages ...
+Fetched 261 kB in 0s (2269 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12687 files and directories currently installed.)
+Preparing to unpack .../tzdata_2019c-0+deb10u1_all.deb ...
+Unpacking tzdata (2019c-0+deb10u1) over (2019b-0+deb10u1) ...
+Setting up tzdata (2019c-0+deb10u1) ...
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Tue Feb  4 19:16:39 UTC 2020.
+Universal Time is now:  Tue Feb  4 19:16:39 UTC 2020.
+Run 'dpkg-reconfigure tzdata' if you wish to change it.
+
+Removing intermediate container 460547b10856
+ ---> 059cd28db5c0
+Step 10/20 : RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+ ---> Running in 6c47ea2630c2
+Removing intermediate container 6c47ea2630c2
+ ---> 612ea8a468c1
+Step 11/20 : RUN dpkg-reconfigure -f noninteractive tzdata
+ ---> Running in 1a1001b3dafb
+[91m
+Current default time zone: 'America/New_York'
+[0m[91mLocal time is now:      Tue Feb  4 14:16:43 EST 2020.
+Universal Time is now:  Tue Feb  4 19:16:43 UTC 2020.
+
+[0mRemoving intermediate container 1a1001b3dafb
+ ---> 7b4534e732fe
+Step 12/20 : RUN    conda install  --override-channels -c iuc -c bioconda -c conda-forge -c defaults -c r python=2.7.13 bioconductor-deseq2=1.16.1 r-base=3.4.1 r-pheatmap bioconductor-vsn bioconductor-biocparallel=1.12.0 r-ggrepel star=2.5.3a bedtools=2.25.0 samtools=1.1 stringtie=1.3.3 igvtools=2.3.93 ucsc-genepredtobed ucsc-gtftogenepred ucsc-genepredtogtf ucsc-bedgraphtobigwig r-hexbin
+ ---> Running in 719549026cb0
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... failed with initial frozen solve. Retrying with flexible solve.
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /opt/conda
+
+  added / updated specs:
+    - bedtools=2.25.0
+    - bioconductor-biocparallel=1.12.0
+    - bioconductor-deseq2=1.16.1
+    - bioconductor-vsn
+    - igvtools=2.3.93
+    - python=2.7.13
+    - r-base=3.4.1
+    - r-ggrepel
+    - r-hexbin
+    - r-pheatmap
+    - samtools=1.1
+    - star=2.5.3a
+    - stringtie=1.3.3
+    - ucsc-bedgraphtobigwig
+    - ucsc-genepredtobed
+    - ucsc-genepredtogtf
+    - ucsc-gtftogenepred
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    _r-mutex-1.0.1             |      anacondar_1           3 KB  conda-forge
+    asn1crypto-1.3.0           |           py27_0         162 KB  conda-forge
+    bedtools-2.25.0            |                2         728 KB  bioconda
+    bioconductor-affy-1.56.0   |         r3.4.1_0         1.5 MB  bioconda
+    bioconductor-affyio-1.50.0 |   r341h470a237_0          98 KB  bioconda
+    bioconductor-annotate-1.58.0|           r341_0         1.9 MB  bioconda
+    bioconductor-annotationdbi-1.42.1|           r341_0         4.5 MB  bioconda
+    bioconductor-biobase-2.40.0|   r341h470a237_0         2.0 MB  bioconda
+    bioconductor-biocgenerics-0.26.0|           r341_0         628 KB  bioconda
+    bioconductor-biocinstaller-1.28.0|           r341_1          64 KB  bioconda
+    bioconductor-biocparallel-1.12.0|   r341h219a75b_1         863 KB  bioconda
+    bioconductor-delayedarray-0.4.1|         r3.4.1_0         681 KB  bioconda
+    bioconductor-deseq2-1.16.1 |         r3.4.1_3         2.4 MB  bioconda
+    bioconductor-genefilter-1.62.0|   r341h26a2512_0         1.6 MB  bioconda
+    bioconductor-geneplotter-1.58.0|           r341_0         1.4 MB  bioconda
+    bioconductor-genomeinfodb-1.14.0|         r3.4.1_0         3.6 MB  bioconda
+    bioconductor-genomeinfodbdata-0.99.0|         r3.4.1_0        15.6 MB  bioconda
+    bioconductor-genomicranges-1.30.3|         r3.4.1_0         1.6 MB  bioconda
+    bioconductor-iranges-2.14.12|   r341h470a237_0         1.6 MB  bioconda
+    bioconductor-limma-3.36.5  |   r341h470a237_0         2.1 MB  bioconda
+    bioconductor-preprocesscore-1.42.0|   r341h470a237_0         134 KB  bioconda
+    bioconductor-s4vectors-0.18.3|   r341h470a237_0         1.5 MB  bioconda
+    bioconductor-summarizedexperiment-1.8.0|         r3.4.1_0         1.7 MB  bioconda
+    bioconductor-tximport-1.8.0|           r341_0         233 KB  bioconda
+    bioconductor-vsn-3.46.0    |         r3.4.1_0         1.9 MB  bioconda
+    bioconductor-xvector-0.20.0|   r341h470a237_0         446 KB  bioconda
+    bioconductor-zlibbioc-1.26.0|   r341h470a237_0         110 KB  bioconda
+    bzip2-1.0.8                |       h516909a_2         396 KB  conda-forge
+    ca-certificates-2019.11.28 |       hecc5488_0         145 KB  conda-forge
+    cairo-1.14.6               |                4         1.2 MB  conda-forge
+    certifi-2019.11.28         |           py27_0         149 KB  conda-forge
+    cffi-1.13.2                |   py27h8022711_0         216 KB  conda-forge
+    chardet-3.0.4              |        py27_1003         180 KB  conda-forge
+    conda-4.8.2                |           py27_0         3.0 MB  conda-forge
+    conda-package-handling-1.6.0|   py27h516909a_1         944 KB  conda-forge
+    cryptography-2.5           |   py27hb7f436b_1         634 KB  conda-forge
+    curl-7.54.1                |                0         617 KB  conda-forge
+    enum34-1.1.6               |        py27_1002          57 KB  conda-forge
+    fontconfig-2.12.1          |                6         939 KB  conda-forge
+    freetype-2.7               |                1         2.8 MB  conda-forge
+    futures-3.3.0              |           py27_0          25 KB  conda-forge
+    gettext-0.19.8.1           |    hc5be6a0_1002         3.6 MB  conda-forge
+    glib-2.51.4                |                0         6.0 MB  conda-forge
+    graphite2-1.3.13           |    hf484d3e_1000         109 KB  conda-forge
+    gsl-2.6                    |       h294904e_0         3.1 MB  conda-forge
+    harfbuzz-1.4.3             |                0         4.0 MB  conda-forge
+    icu-58.2                   |    hf484d3e_1000        22.6 MB  conda-forge
+    idna-2.8                   |        py27_1000         133 KB  conda-forge
+    igvtools-2.3.93            |                0        11.2 MB  bioconda
+    ipaddress-1.0.23           |             py_0          19 KB  conda-forge
+    jpeg-9c                    |    h14c3975_1001         251 KB  conda-forge
+    krb5-1.14.6                |                0         4.0 MB  conda-forge
+    libblas-3.8.0              |      14_openblas          10 KB  conda-forge
+    libcblas-3.8.0             |      14_openblas          10 KB  conda-forge
+    libgcc-7.2.0               |       h69d50b8_2         304 KB  conda-forge
+    libgfortran-3.0.0          |                1         281 KB  conda-forge
+    libgfortran-ng-7.3.0       |       hdf63c60_5         1.7 MB  conda-forge
+    libiconv-1.15              |    h516909a_1005         2.0 MB  conda-forge
+    libopenblas-0.3.7          |       h5ec1e0e_6         7.6 MB  conda-forge
+    libpng-1.6.28              |                1         301 KB  conda-forge
+    libssh2-1.8.0              |       h9cfc8f7_4         213 KB
+    libtiff-4.0.7              |                0         488 KB  conda-forge
+    libuuid-2.32.1             |    h14c3975_1000          26 KB  conda-forge
+    libxcb-1.13                |    h14c3975_1002         396 KB  conda-forge
+    libxml2-2.9.5              |                0         5.0 MB  conda-forge
+    mysql-connector-c-6.1.6    |                2         9.6 MB  bioconda
+    ncurses-5.9                |               10         1.1 MB  conda-forge
+    openjdk-11.0.1             |    h516909a_1016       175.5 MB  conda-forge
+    openssl-1.0.2u             |       h516909a_0         3.2 MB  conda-forge
+    pango-1.40.4               |                0         999 KB  conda-forge
+    pcre-8.39                  |                0         725 KB  conda-forge
+    pip-20.0.2                 |           py27_1         1.9 MB  conda-forge
+    pixman-0.34.0              |    h14c3975_1003         595 KB  conda-forge
+    pthread-stubs-0.4          |    h14c3975_1001           5 KB  conda-forge
+    pycosat-0.6.3              |py27h516909a_1002         104 KB  conda-forge
+    pycparser-2.19             |           py27_1         172 KB  conda-forge
+    pyopenssl-19.0.0           |           py27_0          79 KB  conda-forge
+    pysocks-1.7.1              |           py27_0          26 KB  conda-forge
+    python-2.7.13              |                1        13.8 MB  conda-forge
+    r-acepack-1.4.1            |   r341h364d78e_2          59 KB  conda-forge
+    r-assertthat-0.2.0         |   r341h6115d3f_1          58 KB  conda-forge
+    r-backports-1.1.2          |   r341hc070d10_1          53 KB  conda-forge
+    r-base-3.4.1               |                0        23.0 MB  conda-forge
+    r-base64enc-0.1_3          |   r341hc070d10_2          39 KB  conda-forge
+    r-bh-1.66.0_1              |        r341_1001         9.9 MB  conda-forge
+    r-bit-1.1_12               |   r341h470a237_2         226 KB  conda-forge
+    r-bit64-0.9_7              |   r341hc070d10_0         456 KB  conda-forge
+    r-bitops-1.0_6             |   r341hc070d10_2          37 KB  conda-forge
+    r-blob-1.1.1               |           r341_1          20 KB  conda-forge
+    r-catools-1.17.1.1         |   r341h9d2a408_2         175 KB  conda-forge
+    r-checkmate-1.8.5          |   r341hc070d10_2         552 KB  conda-forge
+    r-cluster-2.0.7_1          |   r341h364d78e_0         535 KB  conda-forge
+    r-colorspace-1.3_2         |   r341hc070d10_2         426 KB  conda-forge
+    r-data.table-1.11.6        |   r341hc070d10_0         1.4 MB  bioconda
+    r-dbi-1.0.0                |   r341h6115d3f_1         827 KB  conda-forge
+    r-digest-0.6.18            |   r341hc070d10_0         133 KB  conda-forge
+    r-evaluate-0.11            |   r341h6115d3f_0          51 KB  conda-forge
+    r-foreign-0.8_71           |   r341hc070d10_2         270 KB  conda-forge
+    r-formatr-1.5              |   r341h6115d3f_1         133 KB  conda-forge
+    r-formula-1.2_3            |   r341h6115d3f_1         176 KB  conda-forge
+    r-futile.logger-1.4.3      |   r341h6115d3f_1         107 KB  conda-forge
+    r-futile.options-1.0.1     |   r341h6115d3f_0          19 KB  conda-forge
+    r-gdata-2.18.0             |   r341h6115d3f_1         1.0 MB  conda-forge
+    r-getopt-1.20.2            |           r341_1          29 KB  conda-forge
+    r-ggplot2-3.1.0            |   r341h6115d3f_0         3.1 MB  conda-forge
+    r-ggrepel-0.8.0            |   r341h9d2a408_2         338 KB  conda-forge
+    r-glue-1.3.0               |   r341h470a237_2          94 KB  conda-forge
+    r-gplots-3.0.1             |   r341h6115d3f_1         512 KB  conda-forge
+    r-gridextra-2.3            |   r341h6115d3f_1         1.0 MB  conda-forge
+    r-gtable-0.2.0             |   r341h6115d3f_1          68 KB  conda-forge
+    r-gtools-3.8.1             |   r341hc070d10_2         272 KB  conda-forge
+    r-hexbin-1.27.2            |   r341h364d78e_2         710 KB  conda-forge
+    r-highr-0.7                |   r341h6115d3f_1          35 KB  conda-forge
+    r-hmisc-4.1_1              |   r341h364d78e_1         1.7 MB  conda-forge
+    r-htmltable-1.12           |   r341h6115d3f_0         241 KB  conda-forge
+    r-htmltools-0.3.6          |   r341hfc679d8_2         146 KB  conda-forge
+    r-htmlwidgets-1.2          |   r341h6115d3f_0         652 KB  conda-forge
+    r-jsonlite-1.5             |   r341hc070d10_2         1.0 MB  conda-forge
+    r-kernsmooth-2.23_15       |   r341h364d78e_2          96 KB  conda-forge
+    r-knitr-1.20               |   r341h6115d3f_1         806 KB  conda-forge
+    r-labeling-0.3             |   r341h6115d3f_1          44 KB  conda-forge
+    r-lambda.r-1.2.3           |   r341h6115d3f_0          86 KB  conda-forge
+    r-lattice-0.20_35          |   r341hc070d10_0         726 KB  conda-forge
+    r-latticeextra-0.6_28      |   r341h6115d3f_1         2.0 MB  conda-forge
+    r-lazyeval-0.2.1           |   r341hc070d10_2         132 KB  conda-forge
+    r-locfit-1.5_9.1           |   r341h470a237_2         434 KB  conda-forge
+    r-magrittr-1.5             |   r341h6115d3f_1         164 KB  conda-forge
+    r-markdown-0.8             |   r341hc070d10_3         113 KB  conda-forge
+    r-mass-7.3_50              |   r341hc070d10_2         1.1 MB  conda-forge
+    r-matrix-1.2_14            |   r341hc070d10_2         2.4 MB  conda-forge
+    r-matrixstats-0.54.0       |   r341hc070d10_0         609 KB  conda-forge
+    r-memoise-1.1.0            |   r341h6115d3f_1          33 KB  conda-forge
+    r-mgcv-1.8_24              |   r341hc070d10_2         2.4 MB  conda-forge
+    r-mime-0.5                 |   r341hc070d10_2          40 KB  conda-forge
+    r-munsell-0.5.0            |   r341h6115d3f_1         220 KB  conda-forge
+    r-nlme-3.1_137             |   r341h364d78e_0         2.2 MB  conda-forge
+    r-nnet-7.3_12              |   r341hc070d10_2         128 KB  conda-forge
+    r-pheatmap-1.0.10          |   r341h6115d3f_1          52 KB  conda-forge
+    r-pkgconfig-2.0.2          |   r341h6115d3f_1          21 KB  conda-forge
+    r-plogr-0.2.0              |   r341h6115d3f_1          18 KB  conda-forge
+    r-plyr-1.8.4               |   r341h9d2a408_2         762 KB  conda-forge
+    r-prettyunits-1.0.2        |   r341h6115d3f_1          29 KB  conda-forge
+    r-r6-2.2.2                 |   r341h6115d3f_1         255 KB  conda-forge
+    r-rcolorbrewer-1.1_2       |   r341h6115d3f_1          29 KB  conda-forge
+    r-rcpp-1.0.0               |   r341h9d2a408_0         3.3 MB  conda-forge
+    r-rcpparmadillo-0.9.100.5.0|   r341h9d2a408_0         1.2 MB  conda-forge
+    r-rcurl-1.95_4.8           |         r3.4.1_0         760 KB  conda-forge
+    r-reshape2-1.4.3           |   r341h9d2a408_2         123 KB  conda-forge
+    r-rjson-0.2.20             |   r341h9d2a408_0         131 KB  conda-forge
+    r-rlang-0.3.0.1            |   r341h470a237_0         985 KB  conda-forge
+    r-rpart-4.1_13             |   r341hc070d10_2         912 KB  conda-forge
+    r-rsqlite-2.1.1            |   r341h9d2a408_0         954 KB  conda-forge
+    r-rstudioapi-0.7           |   r341h6115d3f_1         117 KB  conda-forge
+    r-scales-1.0.0             |   r341h9d2a408_1         458 KB  conda-forge
+    r-snow-0.4_3               |   r341h6115d3f_0          78 KB  conda-forge
+    r-stringi-1.2.4            |   r341h9d2a408_1         715 KB  conda-forge
+    r-stringr-1.3.1            |   r341h6115d3f_1         164 KB  conda-forge
+    r-survival-2.42_6          |   r341hc070d10_1         4.3 MB  conda-forge
+    r-tibble-1.3.3             |         r3.4.1_0         199 KB  conda-forge
+    r-viridis-0.5.1            |   r341h6115d3f_1         1.8 MB  conda-forge
+    r-viridislite-0.3.0        |   r341h6115d3f_1          59 KB  conda-forge
+    r-withr-2.1.2              |   r341h6115d3f_0         145 KB  conda-forge
+    r-xml-3.98_1.11            |           r341_0         1.7 MB  conda-forge
+    r-xtable-1.8_3             |        r341_1000         684 KB  conda-forge
+    r-yaml-2.2.0               |   r341hc070d10_1         103 KB  conda-forge
+    readline-6.2               |                0         713 KB  conda-forge
+    requests-2.22.0            |           py27_1          83 KB  conda-forge
+    ruamel_yaml-0.15.71        |py27h14c3975_1000         249 KB  conda-forge
+    samtools-1.1               |                0         1.1 MB  bioconda
+    setuptools-44.0.0          |           py27_0         663 KB  conda-forge
+    six-1.14.0                 |           py27_0          22 KB  conda-forge
+    sqlite-3.13.0              |                1         4.9 MB  conda-forge
+    star-2.5.3a                |                0         5.7 MB  bioconda
+    stringtie-1.3.3            |           py27_2         1.4 MB  bioconda
+    tk-8.5.19                  |                2         1.9 MB  conda-forge
+    tqdm-4.36.1                |             py_0          50 KB
+    ucsc-bedgraphtobigwig-357  |                0         972 KB  bioconda
+    ucsc-genepredtobed-357     |                0         2.4 MB  bioconda
+    ucsc-genepredtogtf-357     |                0         2.4 MB  bioconda
+    ucsc-gtftogenepred-357     |                0         2.4 MB  bioconda
+    urllib3-1.25.7             |           py27_0         158 KB  conda-forge
+    wheel-0.34.2               |           py27_0          43 KB  conda-forge
+    xorg-kbproto-1.0.7         |    h14c3975_1002          26 KB  conda-forge
+    xorg-libx11-1.6.9          |       h516909a_0         918 KB  conda-forge
+    xorg-libxau-1.0.9          |       h14c3975_0          13 KB  conda-forge
+    xorg-libxdmcp-1.1.3        |       h516909a_0          18 KB  conda-forge
+    xorg-libxrender-0.9.10     |    h516909a_1002          31 KB  conda-forge
+    xorg-renderproto-0.11.1    |    h14c3975_1002           8 KB  conda-forge
+    xorg-xproto-7.0.31         |    h14c3975_1007          72 KB  conda-forge
+    zlib-1.2.8                 |                3          87 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:       450.7 MB
+
+The following NEW packages will be INSTALLED:
+
+  _r-mutex           conda-forge/noarch::_r-mutex-1.0.1-anacondar_1
+  bedtools           bioconda/linux-64::bedtools-2.25.0-2
+  bioconductor-affy  bioconda/linux-64::bioconductor-affy-1.56.0-r3.4.1_0
+  bioconductor-affy~ bioconda/linux-64::bioconductor-affyio-1.50.0-r341h470a237_0
+  bioconductor-anno~ bioconda/linux-64::bioconductor-annotate-1.58.0-r341_0
+  bioconductor-anno~ bioconda/linux-64::bioconductor-annotationdbi-1.42.1-r341_0
+  bioconductor-biob~ bioconda/linux-64::bioconductor-biobase-2.40.0-r341h470a237_0
+  bioconductor-bioc~ bioconda/linux-64::bioconductor-biocgenerics-0.26.0-r341_0
+  bioconductor-bioc~ bioconda/linux-64::bioconductor-biocinstaller-1.28.0-r341_1
+  bioconductor-bioc~ bioconda/linux-64::bioconductor-biocparallel-1.12.0-r341h219a75b_1
+  bioconductor-dela~ bioconda/linux-64::bioconductor-delayedarray-0.4.1-r3.4.1_0
+  bioconductor-dese~ bioconda/linux-64::bioconductor-deseq2-1.16.1-r3.4.1_3
+  bioconductor-gene~ bioconda/linux-64::bioconductor-genefilter-1.62.0-r341h26a2512_0
+  bioconductor-gene~ bioconda/linux-64::bioconductor-geneplotter-1.58.0-r341_0
+  bioconductor-geno~ bioconda/linux-64::bioconductor-genomeinfodb-1.14.0-r3.4.1_0
+  bioconductor-geno~ bioconda/linux-64::bioconductor-genomeinfodbdata-0.99.0-r3.4.1_0
+  bioconductor-geno~ bioconda/linux-64::bioconductor-genomicranges-1.30.3-r3.4.1_0
+  bioconductor-iran~ bioconda/linux-64::bioconductor-iranges-2.14.12-r341h470a237_0
+  bioconductor-limma bioconda/linux-64::bioconductor-limma-3.36.5-r341h470a237_0
+  bioconductor-prep~ bioconda/linux-64::bioconductor-preprocesscore-1.42.0-r341h470a237_0
+  bioconductor-s4ve~ bioconda/linux-64::bioconductor-s4vectors-0.18.3-r341h470a237_0
+  bioconductor-summ~ bioconda/linux-64::bioconductor-summarizedexperiment-1.8.0-r3.4.1_0
+  bioconductor-txim~ bioconda/linux-64::bioconductor-tximport-1.8.0-r341_0
+  bioconductor-vsn   bioconda/linux-64::bioconductor-vsn-3.46.0-r3.4.1_0
+  bioconductor-xvec~ bioconda/linux-64::bioconductor-xvector-0.20.0-r341h470a237_0
+  bioconductor-zlib~ bioconda/linux-64::bioconductor-zlibbioc-1.26.0-r341h470a237_0
+  bzip2              conda-forge/linux-64::bzip2-1.0.8-h516909a_2
+  cairo              conda-forge/linux-64::cairo-1.14.6-4
+  curl               conda-forge/linux-64::curl-7.54.1-0
+  enum34             conda-forge/linux-64::enum34-1.1.6-py27_1002
+  fontconfig         conda-forge/linux-64::fontconfig-2.12.1-6
+  freetype           conda-forge/linux-64::freetype-2.7-1
+  futures            conda-forge/linux-64::futures-3.3.0-py27_0
+  gettext            conda-forge/linux-64::gettext-0.19.8.1-hc5be6a0_1002
+  glib               conda-forge/linux-64::glib-2.51.4-0
+  graphite2          conda-forge/linux-64::graphite2-1.3.13-hf484d3e_1000
+  gsl                conda-forge/linux-64::gsl-2.6-h294904e_0
+  harfbuzz           conda-forge/linux-64::harfbuzz-1.4.3-0
+  icu                conda-forge/linux-64::icu-58.2-hf484d3e_1000
+  igvtools           bioconda/linux-64::igvtools-2.3.93-0
+  ipaddress          conda-forge/noarch::ipaddress-1.0.23-py_0
+  jpeg               conda-forge/linux-64::jpeg-9c-h14c3975_1001
+  krb5               conda-forge/linux-64::krb5-1.14.6-0
+  libblas            conda-forge/linux-64::libblas-3.8.0-14_openblas
+  libcblas           conda-forge/linux-64::libcblas-3.8.0-14_openblas
+  libgcc             conda-forge/linux-64::libgcc-7.2.0-h69d50b8_2
+  libgfortran        conda-forge/linux-64::libgfortran-3.0.0-1
+  libgfortran-ng     conda-forge/linux-64::libgfortran-ng-7.3.0-hdf63c60_5
+  libiconv           conda-forge/linux-64::libiconv-1.15-h516909a_1005
+  libopenblas        conda-forge/linux-64::libopenblas-0.3.7-h5ec1e0e_6
+  libpng             conda-forge/linux-64::libpng-1.6.28-1
+  libssh2            pkgs/main/linux-64::libssh2-1.8.0-h9cfc8f7_4
+  libtiff            conda-forge/linux-64::libtiff-4.0.7-0
+  libuuid            conda-forge/linux-64::libuuid-2.32.1-h14c3975_1000
+  libxcb             conda-forge/linux-64::libxcb-1.13-h14c3975_1002
+  libxml2            conda-forge/linux-64::libxml2-2.9.5-0
+  mysql-connector-c  bioconda/linux-64::mysql-connector-c-6.1.6-2
+  openjdk            conda-forge/linux-64::openjdk-11.0.1-h516909a_1016
+  pango              conda-forge/linux-64::pango-1.40.4-0
+  pcre               conda-forge/linux-64::pcre-8.39-0
+  pixman             conda-forge/linux-64::pixman-0.34.0-h14c3975_1003
+  pthread-stubs      conda-forge/linux-64::pthread-stubs-0.4-h14c3975_1001
+  r-acepack          conda-forge/linux-64::r-acepack-1.4.1-r341h364d78e_2
+  r-assertthat       conda-forge/linux-64::r-assertthat-0.2.0-r341h6115d3f_1
+  r-backports        conda-forge/linux-64::r-backports-1.1.2-r341hc070d10_1
+  r-base             conda-forge/linux-64::r-base-3.4.1-0
+  r-base64enc        conda-forge/linux-64::r-base64enc-0.1_3-r341hc070d10_2
+  r-bh               conda-forge/linux-64::r-bh-1.66.0_1-r341_1001
+  r-bit              conda-forge/linux-64::r-bit-1.1_12-r341h470a237_2
+  r-bit64            conda-forge/linux-64::r-bit64-0.9_7-r341hc070d10_0
+  r-bitops           conda-forge/linux-64::r-bitops-1.0_6-r341hc070d10_2
+  r-blob             conda-forge/linux-64::r-blob-1.1.1-r341_1
+  r-catools          conda-forge/linux-64::r-catools-1.17.1.1-r341h9d2a408_2
+  r-checkmate        conda-forge/linux-64::r-checkmate-1.8.5-r341hc070d10_2
+  r-cluster          conda-forge/linux-64::r-cluster-2.0.7_1-r341h364d78e_0
+  r-colorspace       conda-forge/linux-64::r-colorspace-1.3_2-r341hc070d10_2
+  r-data.table       bioconda/linux-64::r-data.table-1.11.6-r341hc070d10_0
+  r-dbi              conda-forge/linux-64::r-dbi-1.0.0-r341h6115d3f_1
+  r-digest           conda-forge/linux-64::r-digest-0.6.18-r341hc070d10_0
+  r-evaluate         conda-forge/linux-64::r-evaluate-0.11-r341h6115d3f_0
+  r-foreign          conda-forge/linux-64::r-foreign-0.8_71-r341hc070d10_2
+  r-formatr          conda-forge/linux-64::r-formatr-1.5-r341h6115d3f_1
+  r-formula          conda-forge/linux-64::r-formula-1.2_3-r341h6115d3f_1
+  r-futile.logger    conda-forge/linux-64::r-futile.logger-1.4.3-r341h6115d3f_1
+  r-futile.options   conda-forge/linux-64::r-futile.options-1.0.1-r341h6115d3f_0
+  r-gdata            conda-forge/linux-64::r-gdata-2.18.0-r341h6115d3f_1
+  r-getopt           conda-forge/linux-64::r-getopt-1.20.2-r341_1
+  r-ggplot2          conda-forge/linux-64::r-ggplot2-3.1.0-r341h6115d3f_0
+  r-ggrepel          conda-forge/linux-64::r-ggrepel-0.8.0-r341h9d2a408_2
+  r-glue             conda-forge/linux-64::r-glue-1.3.0-r341h470a237_2
+  r-gplots           conda-forge/linux-64::r-gplots-3.0.1-r341h6115d3f_1
+  r-gridextra        conda-forge/linux-64::r-gridextra-2.3-r341h6115d3f_1
+  r-gtable           conda-forge/linux-64::r-gtable-0.2.0-r341h6115d3f_1
+  r-gtools           conda-forge/linux-64::r-gtools-3.8.1-r341hc070d10_2
+  r-hexbin           conda-forge/linux-64::r-hexbin-1.27.2-r341h364d78e_2
+  r-highr            conda-forge/linux-64::r-highr-0.7-r341h6115d3f_1
+  r-hmisc            conda-forge/linux-64::r-hmisc-4.1_1-r341h364d78e_1
+  r-htmltable        conda-forge/linux-64::r-htmltable-1.12-r341h6115d3f_0
+  r-htmltools        conda-forge/linux-64::r-htmltools-0.3.6-r341hfc679d8_2
+  r-htmlwidgets      conda-forge/linux-64::r-htmlwidgets-1.2-r341h6115d3f_0
+  r-jsonlite         conda-forge/linux-64::r-jsonlite-1.5-r341hc070d10_2
+  r-kernsmooth       conda-forge/linux-64::r-kernsmooth-2.23_15-r341h364d78e_2
+  r-knitr            conda-forge/linux-64::r-knitr-1.20-r341h6115d3f_1
+  r-labeling         conda-forge/linux-64::r-labeling-0.3-r341h6115d3f_1
+  r-lambda.r         conda-forge/linux-64::r-lambda.r-1.2.3-r341h6115d3f_0
+  r-lattice          conda-forge/linux-64::r-lattice-0.20_35-r341hc070d10_0
+  r-latticeextra     conda-forge/linux-64::r-latticeextra-0.6_28-r341h6115d3f_1
+  r-lazyeval         conda-forge/linux-64::r-lazyeval-0.2.1-r341hc070d10_2
+  r-locfit           conda-forge/linux-64::r-locfit-1.5_9.1-r341h470a237_2
+  r-magrittr         conda-forge/linux-64::r-magrittr-1.5-r341h6115d3f_1
+  r-markdown         conda-forge/linux-64::r-markdown-0.8-r341hc070d10_3
+  r-mass             conda-forge/linux-64::r-mass-7.3_50-r341hc070d10_2
+  r-matrix           conda-forge/linux-64::r-matrix-1.2_14-r341hc070d10_2
+  r-matrixstats      conda-forge/linux-64::r-matrixstats-0.54.0-r341hc070d10_0
+  r-memoise          conda-forge/linux-64::r-memoise-1.1.0-r341h6115d3f_1
+  r-mgcv             conda-forge/linux-64::r-mgcv-1.8_24-r341hc070d10_2
+  r-mime             conda-forge/linux-64::r-mime-0.5-r341hc070d10_2
+  r-munsell          conda-forge/linux-64::r-munsell-0.5.0-r341h6115d3f_1
+  r-nlme             conda-forge/linux-64::r-nlme-3.1_137-r341h364d78e_0
+  r-nnet             conda-forge/linux-64::r-nnet-7.3_12-r341hc070d10_2
+  r-pheatmap         conda-forge/linux-64::r-pheatmap-1.0.10-r341h6115d3f_1
+  r-pkgconfig        conda-forge/linux-64::r-pkgconfig-2.0.2-r341h6115d3f_1
+  r-plogr            conda-forge/linux-64::r-plogr-0.2.0-r341h6115d3f_1
+  r-plyr             conda-forge/linux-64::r-plyr-1.8.4-r341h9d2a408_2
+  r-prettyunits      conda-forge/linux-64::r-prettyunits-1.0.2-r341h6115d3f_1
+  r-r6               conda-forge/linux-64::r-r6-2.2.2-r341h6115d3f_1
+  r-rcolorbrewer     conda-forge/linux-64::r-rcolorbrewer-1.1_2-r341h6115d3f_1
+  r-rcpp             conda-forge/linux-64::r-rcpp-1.0.0-r341h9d2a408_0
+  r-rcpparmadillo    conda-forge/linux-64::r-rcpparmadillo-0.9.100.5.0-r341h9d2a408_0
+  r-rcurl            conda-forge/linux-64::r-rcurl-1.95_4.8-r3.4.1_0
+  r-reshape2         conda-forge/linux-64::r-reshape2-1.4.3-r341h9d2a408_2
+  r-rjson            conda-forge/linux-64::r-rjson-0.2.20-r341h9d2a408_0
+  r-rlang            conda-forge/linux-64::r-rlang-0.3.0.1-r341h470a237_0
+  r-rpart            conda-forge/linux-64::r-rpart-4.1_13-r341hc070d10_2
+  r-rsqlite          conda-forge/linux-64::r-rsqlite-2.1.1-r341h9d2a408_0
+  r-rstudioapi       conda-forge/linux-64::r-rstudioapi-0.7-r341h6115d3f_1
+  r-scales           conda-forge/linux-64::r-scales-1.0.0-r341h9d2a408_1
+  r-snow             conda-forge/linux-64::r-snow-0.4_3-r341h6115d3f_0
+  r-stringi          conda-forge/linux-64::r-stringi-1.2.4-r341h9d2a408_1
+  r-stringr          conda-forge/linux-64::r-stringr-1.3.1-r341h6115d3f_1
+  r-survival         conda-forge/linux-64::r-survival-2.42_6-r341hc070d10_1
+  r-tibble           conda-forge/linux-64::r-tibble-1.3.3-r3.4.1_0
+  r-viridis          conda-forge/linux-64::r-viridis-0.5.1-r341h6115d3f_1
+  r-viridislite      conda-forge/linux-64::r-viridislite-0.3.0-r341h6115d3f_1
+  r-withr            conda-forge/linux-64::r-withr-2.1.2-r341h6115d3f_0
+  r-xml              conda-forge/linux-64::r-xml-3.98_1.11-r341_0
+  r-xtable           conda-forge/linux-64::r-xtable-1.8_3-r341_1000
+  r-yaml             conda-forge/linux-64::r-yaml-2.2.0-r341hc070d10_1
+  samtools           bioconda/linux-64::samtools-1.1-0
+  star               bioconda/linux-64::star-2.5.3a-0
+  stringtie          bioconda/linux-64::stringtie-1.3.3-py27_2
+  ucsc-bedgraphtobi~ bioconda/linux-64::ucsc-bedgraphtobigwig-357-0
+  ucsc-genepredtobed bioconda/linux-64::ucsc-genepredtobed-357-0
+  ucsc-genepredtogtf bioconda/linux-64::ucsc-genepredtogtf-357-0
+  ucsc-gtftogenepred bioconda/linux-64::ucsc-gtftogenepred-357-0
+  xorg-kbproto       conda-forge/linux-64::xorg-kbproto-1.0.7-h14c3975_1002
+  xorg-libx11        conda-forge/linux-64::xorg-libx11-1.6.9-h516909a_0
+  xorg-libxau        conda-forge/linux-64::xorg-libxau-1.0.9-h14c3975_0
+  xorg-libxdmcp      conda-forge/linux-64::xorg-libxdmcp-1.1.3-h516909a_0
+  xorg-libxrender    conda-forge/linux-64::xorg-libxrender-0.9.10-h516909a_1002
+  xorg-renderproto   conda-forge/linux-64::xorg-renderproto-0.11.1-h14c3975_1002
+  xorg-xproto        conda-forge/linux-64::xorg-xproto-7.0.31-h14c3975_1007
+
+The following packages will be REMOVED:
+
+  libedit-3.1.20181209-hc058e9b_0
+
+The following packages will be UPDATED:
+
+  asn1crypto             pkgs/main::asn1crypto-1.0.1-py37_0 --> conda-forge::asn1crypto-1.3.0-py27_0
+  ca-certificates    pkgs/main::ca-certificates-2019.8.28-0 --> conda-forge::ca-certificates-2019.11.28-hecc5488_0
+  certifi               pkgs/main::certifi-2019.9.11-py37_0 --> conda-forge::certifi-2019.11.28-py27_0
+  cffi                pkgs/main::cffi-1.12.3-py37h2e261b9_0 --> conda-forge::cffi-1.13.2-py27h8022711_0
+  conda                      pkgs/main::conda-4.7.12-py37_0 --> conda-forge::conda-4.8.2-py27_0
+  conda-package-han~ pkgs/main::conda-package-handling-1.6~ --> conda-forge::conda-package-handling-1.6.0-py27h516909a_1
+  idna                           pkgs/main::idna-2.8-py37_0 --> conda-forge::idna-2.8-py27_1000
+  pip                          pkgs/main::pip-19.2.3-py37_0 --> conda-forge::pip-20.0.2-py27_1
+  pycosat            pkgs/main::pycosat-0.6.3-py37h14c3975~ --> conda-forge::pycosat-0.6.3-py27h516909a_1002
+  pycparser                pkgs/main::pycparser-2.19-py37_0 --> conda-forge::pycparser-2.19-py27_1
+  requests                pkgs/main::requests-2.22.0-py37_0 --> conda-forge::requests-2.22.0-py27_1
+  ruamel_yaml        pkgs/main::ruamel_yaml-0.15.46-py37h1~ --> conda-forge::ruamel_yaml-0.15.71-py27h14c3975_1000
+  setuptools            pkgs/main::setuptools-41.4.0-py37_0 --> conda-forge::setuptools-44.0.0-py27_0
+  six                          pkgs/main::six-1.12.0-py37_0 --> conda-forge::six-1.14.0-py27_0
+  urllib3                  pkgs/main::urllib3-1.24.2-py37_0 --> conda-forge::urllib3-1.25.7-py27_0
+  wheel                      pkgs/main::wheel-0.33.6-py37_0 --> conda-forge::wheel-0.34.2-py27_0
+
+The following packages will be SUPERSEDED by a higher-priority channel:
+
+  chardet                pkgs/main::chardet-3.0.4-py37_1003 --> conda-forge::chardet-3.0.4-py27_1003
+  cryptography       pkgs/main::cryptography-2.7-py37h1ba5~ --> conda-forge::cryptography-2.5-py27hb7f436b_1
+  ncurses                 pkgs/main::ncurses-6.1-he6710b0_1 --> conda-forge::ncurses-5.9-10
+  openssl              pkgs/main::openssl-1.1.1d-h7b6447c_2 --> conda-forge::openssl-1.0.2u-h516909a_0
+  pyopenssl              pkgs/main::pyopenssl-19.0.0-py37_0 --> conda-forge::pyopenssl-19.0.0-py27_0
+  pysocks                   pkgs/main::pysocks-1.7.1-py37_0 --> conda-forge::pysocks-1.7.1-py27_0
+  python                 pkgs/main::python-3.7.4-h265db76_1 --> conda-forge::python-2.7.13-1
+  readline               pkgs/main::readline-7.0-h7b6447c_5 --> conda-forge::readline-6.2-0
+  sqlite                pkgs/main::sqlite-3.30.0-h7b6447c_0 --> conda-forge::sqlite-3.13.0-1
+  tk                         pkgs/main::tk-8.6.8-hbc83047_0 --> conda-forge::tk-8.5.19-2
+  zlib                    pkgs/main::zlib-1.2.11-h7b6447c_3 --> conda-forge::zlib-1.2.8-3
+
+
+Proceed ([y]/n)? 
+
+Downloading and Extracting Packages
+r-stringr-1.3.1      | 164 KB    |            |   0% r-stringr-1.3.1      | 164 KB    | 9          |  10% r-stringr-1.3.1      | 164 KB    | ########## | 100% 
+bzip2-1.0.8          | 396 KB    |            |   0% bzip2-1.0.8          | 396 KB    | ########## | 100% 
+glib-2.51.4          | 6.0 MB    |            |   0% glib-2.51.4          | 6.0 MB    | 7          |   8% glib-2.51.4          | 6.0 MB    | ##7        |  27% glib-2.51.4          | 6.0 MB    | ####7      |  48% glib-2.51.4          | 6.0 MB    | ######7    |  68% glib-2.51.4          | 6.0 MB    | ########2  |  82% glib-2.51.4          | 6.0 MB    | ########## | 100% 
+r-latticeextra-0.6_2 | 2.0 MB    |            |   0% r-latticeextra-0.6_2 | 2.0 MB    | ####2      |  43% r-latticeextra-0.6_2 | 2.0 MB    | #########5 |  95% r-latticeextra-0.6_2 | 2.0 MB    | ########## | 100% 
+bioconductor-summari | 1.7 MB    |            |   0% bioconductor-summari | 1.7 MB    | ###2       |  33% bioconductor-summari | 1.7 MB    | #########5 |  95% bioconductor-summari | 1.7 MB    | ########## | 100% 
+r-snow-0.4_3         | 78 KB     |            |   0% r-snow-0.4_3         | 78 KB     | ########## | 100% 
+r-rcolorbrewer-1.1_2 | 29 KB     |            |   0% r-rcolorbrewer-1.1_2 | 29 KB     | #####5     |  55% r-rcolorbrewer-1.1_2 | 29 KB     | ########## | 100% 
+r-mgcv-1.8_24        | 2.4 MB    |            |   0% r-mgcv-1.8_24        | 2.4 MB    | ###2       |  32% r-mgcv-1.8_24        | 2.4 MB    | #######8   |  79% r-mgcv-1.8_24        | 2.4 MB    | ########## | 100% 
+star-2.5.3a          | 5.7 MB    |            |   0% star-2.5.3a          | 5.7 MB    |            |   0% star-2.5.3a          | 5.7 MB    | #2         |  12% star-2.5.3a          | 5.7 MB    | ###2       |  33% star-2.5.3a          | 5.7 MB    | #####1     |  51% star-2.5.3a          | 5.7 MB    | #######2   |  72% star-2.5.3a          | 5.7 MB    | #########3 |  93% star-2.5.3a          | 5.7 MB    | ########## | 100% 
+libpng-1.6.28        | 301 KB    |            |   0% libpng-1.6.28        | 301 KB    | ########## | 100% 
+bioconductor-biocgen | 628 KB    |            |   0% bioconductor-biocgen | 628 KB    | 2          |   3% bioconductor-biocgen | 628 KB    | ########## | 100% 
+r-munsell-0.5.0      | 220 KB    |            |   0% r-munsell-0.5.0      | 220 KB    | ########## | 100% 
+graphite2-1.3.13     | 109 KB    |            |   0% graphite2-1.3.13     | 109 KB    | ########## | 100% 
+r-viridis-0.5.1      | 1.8 MB    |            |   0% r-viridis-0.5.1      | 1.8 MB    | ####4      |  45% r-viridis-0.5.1      | 1.8 MB    | ########## | 100% 
+xorg-renderproto-0.1 | 8 KB      |            |   0% xorg-renderproto-0.1 | 8 KB      | ########## | 100% 
+r-matrix-1.2_14      | 2.4 MB    |            |   0% r-matrix-1.2_14      | 2.4 MB    | ###1       |  31% r-matrix-1.2_14      | 2.4 MB    | ########1  |  82% r-matrix-1.2_14      | 2.4 MB    | ########## | 100% 
+r-htmltable-1.12     | 241 KB    |            |   0% r-htmltable-1.12     | 241 KB    | ########## | 100% 
+igvtools-2.3.93      | 11.2 MB   |            |   0% igvtools-2.3.93      | 11.2 MB   |            |   0% igvtools-2.3.93      | 11.2 MB   | #          |  11% igvtools-2.3.93      | 11.2 MB   | #9         |  19% igvtools-2.3.93      | 11.2 MB   | ##8        |  29% igvtools-2.3.93      | 11.2 MB   | ###7       |  38% igvtools-2.3.93      | 11.2 MB   | ####8      |  49% igvtools-2.3.93      | 11.2 MB   | #####9     |  59% igvtools-2.3.93      | 11.2 MB   | #######    |  70% igvtools-2.3.93      | 11.2 MB   | ########   |  81% igvtools-2.3.93      | 11.2 MB   | #########1 |  92% igvtools-2.3.93      | 11.2 MB   | ########## | 100% 
+ucsc-genepredtogtf-3 | 2.4 MB    |            |   0% ucsc-genepredtogtf-3 | 2.4 MB    |            |   1% ucsc-genepredtogtf-3 | 2.4 MB    | 1          |   2% ucsc-genepredtogtf-3 | 2.4 MB    | ##6        |  26% ucsc-genepredtogtf-3 | 2.4 MB    | ######5    |  66% ucsc-genepredtogtf-3 | 2.4 MB    | ########## | 100% 
+r-locfit-1.5_9.1     | 434 KB    |            |   0% r-locfit-1.5_9.1     | 434 KB    | ########## | 100% 
+cryptography-2.5     | 634 KB    |            |   0% cryptography-2.5     | 634 KB    | ########## | 100% 
+r-scales-1.0.0       | 458 KB    |            |   0% r-scales-1.0.0       | 458 KB    | ########## | 100% 
+r-base-3.4.1         | 23.0 MB   |            |   0% r-base-3.4.1         | 23.0 MB   |            |   0% r-base-3.4.1         | 23.0 MB   | 4          |   5% r-base-3.4.1         | 23.0 MB   | #          |  10% r-base-3.4.1         | 23.0 MB   | #4         |  15% r-base-3.4.1         | 23.0 MB   | #9         |  19% r-base-3.4.1         | 23.0 MB   | ##4        |  24% r-base-3.4.1         | 23.0 MB   | ##9        |  29% r-base-3.4.1         | 23.0 MB   | ###4       |  35% r-base-3.4.1         | 23.0 MB   | ###9       |  40% r-base-3.4.1         | 23.0 MB   | ####4      |  44% r-base-3.4.1         | 23.0 MB   | ####9      |  50% r-base-3.4.1         | 23.0 MB   | #####4     |  55% r-base-3.4.1         | 23.0 MB   | #####9     |  60% r-base-3.4.1         | 23.0 MB   | ######5    |  65% r-base-3.4.1         | 23.0 MB   | ######9    |  70% r-base-3.4.1         | 23.0 MB   | #######5   |  75% r-base-3.4.1         | 23.0 MB   | ########   |  80% r-base-3.4.1         | 23.0 MB   | ########5  |  85% r-base-3.4.1         | 23.0 MB   | #########  |  90% r-base-3.4.1         | 23.0 MB   | #########5 |  96% r-base-3.4.1         | 23.0 MB   | ########## | 100% 
+pycosat-0.6.3        | 104 KB    |            |   0% pycosat-0.6.3        | 104 KB    | ########## | 100% 
+r-base64enc-0.1_3    | 39 KB     |            |   0% r-base64enc-0.1_3    | 39 KB     | ########## | 100% 
+r-xtable-1.8_3       | 684 KB    |            |   0% r-xtable-1.8_3       | 684 KB    | ########## | 100% 
+tqdm-4.36.1          | 50 KB     |            |   0% tqdm-4.36.1          | 50 KB     | ###1       |  32% tqdm-4.36.1          | 50 KB     | ########## | 100% 
+r-rcpp-1.0.0         | 3.3 MB    |            |   0% r-rcpp-1.0.0         | 3.3 MB    | ##4        |  24% r-rcpp-1.0.0         | 3.3 MB    | #####8     |  59% r-rcpp-1.0.0         | 3.3 MB    | #########4 |  95% r-rcpp-1.0.0         | 3.3 MB    | ########## | 100% 
+r-rcurl-1.95_4.8     | 760 KB    |            |   0% r-rcurl-1.95_4.8     | 760 KB    | #########8 |  99% r-rcurl-1.95_4.8     | 760 KB    | ########## | 100% 
+libgfortran-3.0.0    | 281 KB    |            |   0% libgfortran-3.0.0    | 281 KB    | ########## | 100% 
+bioconductor-limma-3 | 2.1 MB    |            |   0% bioconductor-limma-3 | 2.1 MB    | ###4       |  34% bioconductor-limma-3 | 2.1 MB    | ########9  |  90% bioconductor-limma-3 | 2.1 MB    | ########## | 100% 
+r-magrittr-1.5       | 164 KB    |            |   0% r-magrittr-1.5       | 164 KB    | ########## | 100% 
+r-withr-2.1.2        | 145 KB    |            |   0% r-withr-2.1.2        | 145 KB    | ########## | 100% 
+asn1crypto-1.3.0     | 162 KB    |            |   0% asn1crypto-1.3.0     | 162 KB    | ########## | 100% 
+ca-certificates-2019 | 145 KB    |            |   0% ca-certificates-2019 | 145 KB    | ########## | 100% 
+r-bitops-1.0_6       | 37 KB     |            |   0% r-bitops-1.0_6       | 37 KB     | ########## | 100% 
+r-futile.logger-1.4. | 107 KB    |            |   0% r-futile.logger-1.4. | 107 KB    | ########## | 100% 
+six-1.14.0           | 22 KB     |            |   0% six-1.14.0           | 22 KB     | ########## | 100% 
+fontconfig-2.12.1    | 939 KB    |            |   0% fontconfig-2.12.1    | 939 KB    | ######6    |  66% fontconfig-2.12.1    | 939 KB    | ########## | 100% 
+samtools-1.1         | 1.1 MB    |            |   0% samtools-1.1         | 1.1 MB    | 1          |   1% samtools-1.1         | 1.1 MB    | ##8        |  28% samtools-1.1         | 1.1 MB    | ########8  |  89% samtools-1.1         | 1.1 MB    | ########## | 100% 
+r-evaluate-0.11      | 51 KB     |            |   0% r-evaluate-0.11      | 51 KB     | ########## | 100% 
+gsl-2.6              | 3.1 MB    |            |   0% gsl-2.6              | 3.1 MB    | ##5        |  25% gsl-2.6              | 3.1 MB    | ######4    |  64% gsl-2.6              | 3.1 MB    | ########## | 100% 
+r-assertthat-0.2.0   | 58 KB     |            |   0% r-assertthat-0.2.0   | 58 KB     | ########## | 100% 
+bioconductor-biobase | 2.0 MB    |            |   0% bioconductor-biobase | 2.0 MB    | ####2      |  42% bioconductor-biobase | 2.0 MB    | ########## | 100% 
+r-gridextra-2.3      | 1.0 MB    |            |   0% r-gridextra-2.3      | 1.0 MB    | #6         |  17% r-gridextra-2.3      | 1.0 MB    | ########## | 100% 
+r-tibble-1.3.3       | 199 KB    |            |   0% r-tibble-1.3.3       | 199 KB    | ########## | 100% 
+bioconductor-s4vecto | 1.5 MB    |            |   0% bioconductor-s4vecto | 1.5 MB    | #####1     |  52% bioconductor-s4vecto | 1.5 MB    | ########## | 100% 
+cffi-1.13.2          | 216 KB    |            |   0% cffi-1.13.2          | 216 KB    | ########## | 100% 
+futures-3.3.0        | 25 KB     |            |   0% futures-3.3.0        | 25 KB     | ########## | 100% 
+pixman-0.34.0        | 595 KB    |            |   0% pixman-0.34.0        | 595 KB    | ########## | 100% 
+urllib3-1.25.7       | 158 KB    |            |   0% urllib3-1.25.7       | 158 KB    | ########## | 100% 
+libcblas-3.8.0       | 10 KB     |            |   0% libcblas-3.8.0       | 10 KB     | ########## | 100% 
+pip-20.0.2           | 1.9 MB    |            |   0% pip-20.0.2           | 1.9 MB    | ####1      |  42% pip-20.0.2           | 1.9 MB    | ########## | 100% 
+conda-4.8.2          | 3.0 MB    |            |   0% conda-4.8.2          | 3.0 MB    | ##7        |  27% conda-4.8.2          | 3.0 MB    | ######7    |  67% conda-4.8.2          | 3.0 MB    | ########## | 100% 
+wheel-0.34.2         | 43 KB     |            |   0% wheel-0.34.2         | 43 KB     | ########## | 100% 
+r-nlme-3.1_137       | 2.2 MB    |            |   0% r-nlme-3.1_137       | 2.2 MB    | #8         |  18% r-nlme-3.1_137       | 2.2 MB    | ######8    |  69% r-nlme-3.1_137       | 2.2 MB    | ########## | 100% 
+libxml2-2.9.5        | 5.0 MB    |            |   0% libxml2-2.9.5        | 5.0 MB    | #6         |  16% libxml2-2.9.5        | 5.0 MB    | ####       |  40% libxml2-2.9.5        | 5.0 MB    | ######1    |  61% libxml2-2.9.5        | 5.0 MB    | ########5  |  85% libxml2-2.9.5        | 5.0 MB    | ########## | 100% 
+r-data.table-1.11.6  | 1.4 MB    |            |   0% r-data.table-1.11.6  | 1.4 MB    | ####6      |  47% r-data.table-1.11.6  | 1.4 MB    | ########## | 100% 
+r-hmisc-4.1_1        | 1.7 MB    |            |   0% r-hmisc-4.1_1        | 1.7 MB    | #####2     |  52% r-hmisc-4.1_1        | 1.7 MB    | ########## | 100% 
+r-gplots-3.0.1       | 512 KB    |            |   0% r-gplots-3.0.1       | 512 KB    | ########## | 100% 
+pcre-8.39            | 725 KB    |            |   0% pcre-8.39            | 725 KB    | ########## | 100% 
+r-formatr-1.5        | 133 KB    |            |   0% r-formatr-1.5        | 133 KB    | ########## | 100% 
+r-colorspace-1.3_2   | 426 KB    |            |   0% r-colorspace-1.3_2   | 426 KB    | ########## | 100% 
+r-bit-1.1_12         | 226 KB    |            |   0% r-bit-1.1_12         | 226 KB    | ########## | 100% 
+sqlite-3.13.0        | 4.9 MB    |            |   0% sqlite-3.13.0        | 4.9 MB    | #7         |  17% sqlite-3.13.0        | 4.9 MB    | ####1      |  41% sqlite-3.13.0        | 4.9 MB    | ######4    |  64% sqlite-3.13.0        | 4.9 MB    | ########7  |  88% sqlite-3.13.0        | 4.9 MB    | ########## | 100% 
+pysocks-1.7.1        | 26 KB     |            |   0% pysocks-1.7.1        | 26 KB     | ########## | 100% 
+r-survival-2.42_6    | 4.3 MB    |            |   0% r-survival-2.42_6    | 4.3 MB    | #7         |  18% r-survival-2.42_6    | 4.3 MB    | ####3      |  44% r-survival-2.42_6    | 4.3 MB    | #######    |  71% r-survival-2.42_6    | 4.3 MB    | #########8 |  98% r-survival-2.42_6    | 4.3 MB    | ########## | 100% 
+r-rjson-0.2.20       | 131 KB    |            |   0% r-rjson-0.2.20       | 131 KB    | ########## | 100% 
+stringtie-1.3.3      | 1.4 MB    |            |   0% stringtie-1.3.3      | 1.4 MB    | 1          |   1% stringtie-1.3.3      | 1.4 MB    | #2         |  12% stringtie-1.3.3      | 1.4 MB    | ####8      |  48% stringtie-1.3.3      | 1.4 MB    | ########## | 100% 
+xorg-libx11-1.6.9    | 918 KB    |            |   0% xorg-libx11-1.6.9    | 918 KB    | #######8   |  78% xorg-libx11-1.6.9    | 918 KB    | ########## | 100% 
+openjdk-11.0.1       | 175.5 MB  |            |   0% openjdk-11.0.1       | 175.5 MB  |            |   0% openjdk-11.0.1       | 175.5 MB  |            |   1% openjdk-11.0.1       | 175.5 MB  | 1          |   2% openjdk-11.0.1       | 175.5 MB  | 2          |   2% openjdk-11.0.1       | 175.5 MB  | 2          |   3% openjdk-11.0.1       | 175.5 MB  | 3          |   4% openjdk-11.0.1       | 175.5 MB  | 4          |   4% openjdk-11.0.1       | 175.5 MB  | 4          |   5% openjdk-11.0.1       | 175.5 MB  | 5          |   6% openjdk-11.0.1       | 175.5 MB  | 6          |   6% openjdk-11.0.1       | 175.5 MB  | 6          |   7% openjdk-11.0.1       | 175.5 MB  | 7          |   8% openjdk-11.0.1       | 175.5 MB  | 8          |   8% openjdk-11.0.1       | 175.5 MB  | 8          |   9% openjdk-11.0.1       | 175.5 MB  | 9          |   9% openjdk-11.0.1       | 175.5 MB  | #          |  10% openjdk-11.0.1       | 175.5 MB  | #          |  11% openjdk-11.0.1       | 175.5 MB  | #1         |  11% openjdk-11.0.1       | 175.5 MB  | #2         |  12% openjdk-11.0.1       | 175.5 MB  | #2         |  13% openjdk-11.0.1       | 175.5 MB  | #3         |  13% openjdk-11.0.1       | 175.5 MB  | #4         |  14% openjdk-11.0.1       | 175.5 MB  | #4         |  15% openjdk-11.0.1       | 175.5 MB  | #5         |  15% openjdk-11.0.1       | 175.5 MB  | #6         |  16% openjdk-11.0.1       | 175.5 MB  | #6         |  17% openjdk-11.0.1       | 175.5 MB  | #7         |  17% openjdk-11.0.1       | 175.5 MB  | #8         |  18% openjdk-11.0.1       | 175.5 MB  | #8         |  19% openjdk-11.0.1       | 175.5 MB  | #9         |  19% openjdk-11.0.1       | 175.5 MB  | ##         |  20% openjdk-11.0.1       | 175.5 MB  | ##         |  21% openjdk-11.0.1       | 175.5 MB  | ##1        |  21% openjdk-11.0.1       | 175.5 MB  | ##2        |  22% openjdk-11.0.1       | 175.5 MB  | ##2        |  23% openjdk-11.0.1       | 175.5 MB  | ##3        |  23% openjdk-11.0.1       | 175.5 MB  | ##4        |  24% openjdk-11.0.1       | 175.5 MB  | ##4        |  25% openjdk-11.0.1       | 175.5 MB  | ##5        |  25% openjdk-11.0.1       | 175.5 MB  | ##6        |  26% openjdk-11.0.1       | 175.5 MB  | ##6        |  27% openjdk-11.0.1       | 175.5 MB  | ##7        |  27% openjdk-11.0.1       | 175.5 MB  | ##8        |  28% openjdk-11.0.1       | 175.5 MB  | ##8        |  29% openjdk-11.0.1       | 175.5 MB  | ##9        |  29% openjdk-11.0.1       | 175.5 MB  | ###        |  30% openjdk-11.0.1       | 175.5 MB  | ###        |  31% openjdk-11.0.1       | 175.5 MB  | ###1       |  31% openjdk-11.0.1       | 175.5 MB  | ###2       |  32% openjdk-11.0.1       | 175.5 MB  | ###2       |  33% openjdk-11.0.1       | 175.5 MB  | ###3       |  33% openjdk-11.0.1       | 175.5 MB  | ###4       |  34% openjdk-11.0.1       | 175.5 MB  | ###4       |  35% openjdk-11.0.1       | 175.5 MB  | ###5       |  35% openjdk-11.0.1       | 175.5 MB  | ###6       |  36% openjdk-11.0.1       | 175.5 MB  | ###6       |  37% openjdk-11.0.1       | 175.5 MB  | ###7       |  37% openjdk-11.0.1       | 175.5 MB  | ###8       |  38% openjdk-11.0.1       | 175.5 MB  | ###8       |  39% openjdk-11.0.1       | 175.5 MB  | ###9       |  39% openjdk-11.0.1       | 175.5 MB  | ####       |  40% openjdk-11.0.1       | 175.5 MB  | ####       |  41% openjdk-11.0.1       | 175.5 MB  | ####1      |  41% openjdk-11.0.1       | 175.5 MB  | ####2      |  42% openjdk-11.0.1       | 175.5 MB  | ####2      |  43% openjdk-11.0.1       | 175.5 MB  | ####3      |  43% openjdk-11.0.1       | 175.5 MB  | ####4      |  44% openjdk-11.0.1       | 175.5 MB  | ####4      |  45% openjdk-11.0.1       | 175.5 MB  | ####5      |  45% openjdk-11.0.1       | 175.5 MB  | ####6      |  46% openjdk-11.0.1       | 175.5 MB  | ####6      |  47% openjdk-11.0.1       | 175.5 MB  | ####7      |  47% openjdk-11.0.1       | 175.5 MB  | ####8      |  48% openjdk-11.0.1       | 175.5 MB  | ####8      |  49% openjdk-11.0.1       | 175.5 MB  | ####9      |  49% openjdk-11.0.1       | 175.5 MB  | #####      |  50% openjdk-11.0.1       | 175.5 MB  | #####      |  51% openjdk-11.0.1       | 175.5 MB  | #####1     |  51% openjdk-11.0.1       | 175.5 MB  | #####2     |  52% openjdk-11.0.1       | 175.5 MB  | #####2     |  53% openjdk-11.0.1       | 175.5 MB  | #####3     |  53% openjdk-11.0.1       | 175.5 MB  | #####4     |  54% openjdk-11.0.1       | 175.5 MB  | #####4     |  55% openjdk-11.0.1       | 175.5 MB  | #####5     |  55% openjdk-11.0.1       | 175.5 MB  | #####6     |  56% openjdk-11.0.1       | 175.5 MB  | #####6     |  57% openjdk-11.0.1       | 175.5 MB  | #####7     |  57% openjdk-11.0.1       | 175.5 MB  | #####8     |  58% openjdk-11.0.1       | 175.5 MB  | #####8     |  59% openjdk-11.0.1       | 175.5 MB  | #####9     |  59% openjdk-11.0.1       | 175.5 MB  | ######     |  60% openjdk-11.0.1       | 175.5 MB  | ######     |  61% openjdk-11.0.1       | 175.5 MB  | ######1    |  62% openjdk-11.0.1       | 175.5 MB  | ######2    |  62% openjdk-11.0.1       | 175.5 MB  | ######2    |  63% openjdk-11.0.1       | 175.5 MB  | ######3    |  64% openjdk-11.0.1       | 175.5 MB  | ######4    |  64% openjdk-11.0.1       | 175.5 MB  | ######4    |  65% openjdk-11.0.1       | 175.5 MB  | ######5    |  66% openjdk-11.0.1       | 175.5 MB  | ######6    |  66% openjdk-11.0.1       | 175.5 MB  | ######6    |  67% openjdk-11.0.1       | 175.5 MB  | ######7    |  68% openjdk-11.0.1       | 175.5 MB  | ######8    |  68% openjdk-11.0.1       | 175.5 MB  | ######8    |  69% openjdk-11.0.1       | 175.5 MB  | ######9    |  70% openjdk-11.0.1       | 175.5 MB  | #######    |  70% openjdk-11.0.1       | 175.5 MB  | #######    |  71% openjdk-11.0.1       | 175.5 MB  | #######1   |  72% openjdk-11.0.1       | 175.5 MB  | #######2   |  72% openjdk-11.0.1       | 175.5 MB  | #######2   |  73% openjdk-11.0.1       | 175.5 MB  | #######3   |  74% openjdk-11.0.1       | 175.5 MB  | #######4   |  74% openjdk-11.0.1       | 175.5 MB  | #######4   |  75% openjdk-11.0.1       | 175.5 MB  | #######5   |  76% openjdk-11.0.1       | 175.5 MB  | #######6   |  76% openjdk-11.0.1       | 175.5 MB  | #######7   |  77% openjdk-11.0.1       | 175.5 MB  | #######7   |  78% openjdk-11.0.1       | 175.5 MB  | #######8   |  78% openjdk-11.0.1       | 175.5 MB  | #######9   |  79% openjdk-11.0.1       | 175.5 MB  | #######9   |  80% openjdk-11.0.1       | 175.5 MB  | ########   |  80% openjdk-11.0.1       | 175.5 MB  | ########1  |  81% openjdk-11.0.1       | 175.5 MB  | ########1  |  82% openjdk-11.0.1       | 175.5 MB  | ########2  |  82% openjdk-11.0.1       | 175.5 MB  | ########3  |  83% openjdk-11.0.1       | 175.5 MB  | ########3  |  84% openjdk-11.0.1       | 175.5 MB  | ########4  |  84% openjdk-11.0.1       | 175.5 MB  | ########5  |  85% openjdk-11.0.1       | 175.5 MB  | ########5  |  86% openjdk-11.0.1       | 175.5 MB  | ########6  |  86% openjdk-11.0.1       | 175.5 MB  | ########7  |  87% openjdk-11.0.1       | 175.5 MB  | ########7  |  88% openjdk-11.0.1       | 175.5 MB  | ########8  |  88% openjdk-11.0.1       | 175.5 MB  | ########9  |  89% openjdk-11.0.1       | 175.5 MB  | ########9  |  90% openjdk-11.0.1       | 175.5 MB  | #########  |  90% openjdk-11.0.1       | 175.5 MB  | #########  |  91% openjdk-11.0.1       | 175.5 MB  | #########1 |  92% openjdk-11.0.1       | 175.5 MB  | #########2 |  92% openjdk-11.0.1       | 175.5 MB  | #########2 |  93% openjdk-11.0.1       | 175.5 MB  | #########3 |  94% openjdk-11.0.1       | 175.5 MB  | #########4 |  94% openjdk-11.0.1       | 175.5 MB  | #########5 |  95% openjdk-11.0.1       | 175.5 MB  | #########5 |  96% openjdk-11.0.1       | 175.5 MB  | #########6 |  96% openjdk-11.0.1       | 175.5 MB  | #########7 |  97% openjdk-11.0.1       | 175.5 MB  | #########7 |  98% openjdk-11.0.1       | 175.5 MB  | #########8 |  98% openjdk-11.0.1       | 175.5 MB  | #########9 |  99% openjdk-11.0.1       | 175.5 MB  | #########9 | 100% openjdk-11.0.1       | 175.5 MB  | ########## | 100% 
+libgcc-7.2.0         | 304 KB    |            |   0% libgcc-7.2.0         | 304 KB    | ########## | 100% 
+harfbuzz-1.4.3       | 4.0 MB    |            |   0% harfbuzz-1.4.3       | 4.0 MB    | ##1        |  22% harfbuzz-1.4.3       | 4.0 MB    | ####6      |  47% harfbuzz-1.4.3       | 4.0 MB    | #######3   |  73% harfbuzz-1.4.3       | 4.0 MB    | ########## | 100% 
+r-blob-1.1.1         | 20 KB     |            |   0% r-blob-1.1.1         | 20 KB     | ########## | 100% 
+bioconductor-vsn-3.4 | 1.9 MB    |            |   0% bioconductor-vsn-3.4 | 1.9 MB    | ####4      |  44% bioconductor-vsn-3.4 | 1.9 MB    | #########8 |  99% bioconductor-vsn-3.4 | 1.9 MB    | ########## | 100% 
+bioconductor-genefil | 1.6 MB    |            |   0% bioconductor-genefil | 1.6 MB    | ###6       |  37% bioconductor-genefil | 1.6 MB    | ########## | 100% 
+r-knitr-1.20         | 806 KB    |            |   0% r-knitr-1.20         | 806 KB    | ########1  |  81% r-knitr-1.20         | 806 KB    | ########## | 100% 
+bioconductor-deseq2- | 2.4 MB    |            |   0% bioconductor-deseq2- | 2.4 MB    |            |   1% bioconductor-deseq2- | 2.4 MB    | 8          |   8% bioconductor-deseq2- | 2.4 MB    | ###4       |  35% bioconductor-deseq2- | 2.4 MB    | ####4      |  44% bioconductor-deseq2- | 2.4 MB    | #########3 |  93% bioconductor-deseq2- | 2.4 MB    | ########## | 100% 
+bioconductor-biocpar | 863 KB    |            |   0% bioconductor-biocpar | 863 KB    | #########2 |  93% bioconductor-biocpar | 863 KB    | ########## | 100% 
+r-prettyunits-1.0.2  | 29 KB     |            |   0% r-prettyunits-1.0.2  | 29 KB     | ########## | 100% 
+r-plogr-0.2.0        | 18 KB     |            |   0% r-plogr-0.2.0        | 18 KB     | ########## | 100% 
+xorg-libxau-1.0.9    | 13 KB     |            |   0% xorg-libxau-1.0.9    | 13 KB     | ########## | 100% 
+_r-mutex-1.0.1       | 3 KB      |            |   0% _r-mutex-1.0.1       | 3 KB      | ########## | 100% 
+r-gdata-2.18.0       | 1.0 MB    |            |   0% r-gdata-2.18.0       | 1.0 MB    | #######2   |  73% r-gdata-2.18.0       | 1.0 MB    | ########## | 100% 
+zlib-1.2.8           | 87 KB     |            |   0% zlib-1.2.8           | 87 KB     | ########## | 100% 
+r-cluster-2.0.7_1    | 535 KB    |            |   0% r-cluster-2.0.7_1    | 535 KB    | ########## | 100% 
+r-htmlwidgets-1.2    | 652 KB    |            |   0% r-htmlwidgets-1.2    | 652 KB    | ########## | 100% 
+pycparser-2.19       | 172 KB    |            |   0% pycparser-2.19       | 172 KB    | ########## | 100% 
+r-formula-1.2_3      | 176 KB    |            |   0% r-formula-1.2_3      | 176 KB    | ########## | 100% 
+r-futile.options-1.0 | 19 KB     |            |   0% r-futile.options-1.0 | 19 KB     | ########## | 100% 
+bioconductor-iranges | 1.6 MB    |            |   0% bioconductor-iranges | 1.6 MB    | ####9      |  49% bioconductor-iranges | 1.6 MB    | ########## | 100% 
+krb5-1.14.6          | 4.0 MB    |            |   0% krb5-1.14.6          | 4.0 MB    | #8         |  19% krb5-1.14.6          | 4.0 MB    | ####9      |  49% krb5-1.14.6          | 4.0 MB    | #######5   |  76% krb5-1.14.6          | 4.0 MB    | ########## | 100% 
+libopenblas-0.3.7    | 7.6 MB    |            |   0% libopenblas-0.3.7    | 7.6 MB    | #          |  10% libopenblas-0.3.7    | 7.6 MB    | ##6        |  26% libopenblas-0.3.7    | 7.6 MB    | ####1      |  42% libopenblas-0.3.7    | 7.6 MB    | #####7     |  57% libopenblas-0.3.7    | 7.6 MB    | #######3   |  73% libopenblas-0.3.7    | 7.6 MB    | ########9  |  89% libopenblas-0.3.7    | 7.6 MB    | ########## | 100% 
+r-rstudioapi-0.7     | 117 KB    |            |   0% r-rstudioapi-0.7     | 117 KB    | ########## | 100% 
+readline-6.2         | 713 KB    |            |   0% readline-6.2         | 713 KB    | ########## | 100% 
+r-r6-2.2.2           | 255 KB    |            |   0% r-r6-2.2.2           | 255 KB    | 6          |   6% r-r6-2.2.2           | 255 KB    | ########## | 100% 
+r-getopt-1.20.2      | 29 KB     |            |   0% r-getopt-1.20.2      | 29 KB     | #####5     |  55% r-getopt-1.20.2      | 29 KB     | ########## | 100% 
+setuptools-44.0.0    | 663 KB    |            |   0% setuptools-44.0.0    | 663 KB    | ########## | 100% 
+libssh2-1.8.0        | 213 KB    |            |   0% libssh2-1.8.0        | 213 KB    | #########7 |  98% libssh2-1.8.0        | 213 KB    | ########## | 100% 
+bioconductor-genomei | 15.6 MB   |            |   0% bioconductor-genomei | 15.6 MB   | 5          |   5% bioconductor-genomei | 15.6 MB   | #2         |  13% bioconductor-genomei | 15.6 MB   | ##         |  20% bioconductor-genomei | 15.6 MB   | ##8        |  28% bioconductor-genomei | 15.6 MB   | ###5       |  36% bioconductor-genomei | 15.6 MB   | ####3      |  43% bioconductor-genomei | 15.6 MB   | #####1     |  51% bioconductor-genomei | 15.6 MB   | #####8     |  59% bioconductor-genomei | 15.6 MB   | ######6    |  67% bioconductor-genomei | 15.6 MB   | #######4   |  74% bioconductor-genomei | 15.6 MB   | ########1  |  82% bioconductor-genomei | 15.6 MB   | ########9  |  89% bioconductor-genomei | 15.6 MB   | #########7 |  97% bioconductor-genomei | 15.6 MB   | ########## | 100% 
+r-highr-0.7          | 35 KB     |            |   0% r-highr-0.7          | 35 KB     | ########## | 100% 
+certifi-2019.11.28   | 149 KB    |            |   0% certifi-2019.11.28   | 149 KB    | ########## | 100% 
+r-xml-3.98_1.11      | 1.7 MB    |            |   0% r-xml-3.98_1.11      | 1.7 MB    | ####5      |  46% r-xml-3.98_1.11      | 1.7 MB    | ########## | 100% 
+bioconductor-preproc | 134 KB    |            |   0% bioconductor-preproc | 134 KB    | ########## | 100% 
+pango-1.40.4         | 999 KB    |            |   0% pango-1.40.4         | 999 KB    | ########8  |  88% pango-1.40.4         | 999 KB    | ########## | 100% 
+r-jsonlite-1.5       | 1.0 MB    |            |   0% r-jsonlite-1.5       | 1.0 MB    | #######    |  71% r-jsonlite-1.5       | 1.0 MB    | ########## | 100% 
+r-dbi-1.0.0          | 827 KB    |            |   0% r-dbi-1.0.0          | 827 KB    | ########## | 100% 
+cairo-1.14.6         | 1.2 MB    |            |   0% cairo-1.14.6         | 1.2 MB    | ######5    |  65% cairo-1.14.6         | 1.2 MB    | ########## | 100% 
+tk-8.5.19            | 1.9 MB    |            |   0% tk-8.5.19            | 1.9 MB    | ###3       |  34% tk-8.5.19            | 1.9 MB    | #########5 |  95% tk-8.5.19            | 1.9 MB    | ########## | 100% 
+r-rcpparmadillo-0.9. | 1.2 MB    |            |   0% r-rcpparmadillo-0.9. | 1.2 MB    | #####4     |  55% r-rcpparmadillo-0.9. | 1.2 MB    | ########## | 100% 
+r-plyr-1.8.4         | 762 KB    |            |   0% r-plyr-1.8.4         | 762 KB    | ########## | 100% 
+r-bh-1.66.0_1        | 9.9 MB    |            |   0% r-bh-1.66.0_1        | 9.9 MB    | 8          |   9% r-bh-1.66.0_1        | 9.9 MB    | #5         |  16% r-bh-1.66.0_1        | 9.9 MB    | ##5        |  25% r-bh-1.66.0_1        | 9.9 MB    | ###7       |  37% r-bh-1.66.0_1        | 9.9 MB    | ####9      |  49% r-bh-1.66.0_1        | 9.9 MB    | ######     |  61% r-bh-1.66.0_1        | 9.9 MB    | #######2   |  72% r-bh-1.66.0_1        | 9.9 MB    | ########4  |  85% r-bh-1.66.0_1        | 9.9 MB    | #########7 |  97% r-bh-1.66.0_1        | 9.9 MB    | ########## | 100% 
+enum34-1.1.6         | 57 KB     |            |   0% enum34-1.1.6         | 57 KB     | ########## | 100% 
+r-pkgconfig-2.0.2    | 21 KB     |            |   0% r-pkgconfig-2.0.2    | 21 KB     | ########## | 100% 
+r-viridislite-0.3.0  | 59 KB     |            |   0% r-viridislite-0.3.0  | 59 KB     | ########## | 100% 
+r-bit64-0.9_7        | 456 KB    |            |   0% r-bit64-0.9_7        | 456 KB    | ########## | 100% 
+libtiff-4.0.7        | 488 KB    |            |   0% libtiff-4.0.7        | 488 KB    | ########## | 100% 
+idna-2.8             | 133 KB    |            |   0% idna-2.8             | 133 KB    | ########## | 100% 
+r-ggrepel-0.8.0      | 338 KB    |            |   0% r-ggrepel-0.8.0      | 338 KB    | ########## | 100% 
+bioconductor-affy-1. | 1.5 MB    |            |   0% bioconductor-affy-1. | 1.5 MB    | #####2     |  53% bioconductor-affy-1. | 1.5 MB    | ########## | 100% 
+gettext-0.19.8.1     | 3.6 MB    |            |   0% gettext-0.19.8.1     | 3.6 MB    | ##3        |  23% gettext-0.19.8.1     | 3.6 MB    | #####5     |  55% gettext-0.19.8.1     | 3.6 MB    | ########7  |  88% gettext-0.19.8.1     | 3.6 MB    | ########## | 100% 
+r-kernsmooth-2.23_15 | 96 KB     |            |   0% r-kernsmooth-2.23_15 | 96 KB     | ########## | 100% 
+r-ggplot2-3.1.0      | 3.1 MB    |            |   0% r-ggplot2-3.1.0      | 3.1 MB    | ##4        |  25% r-ggplot2-3.1.0      | 3.1 MB    | ######3    |  64% r-ggplot2-3.1.0      | 3.1 MB    | ########## | 100% 
+libiconv-1.15        | 2.0 MB    |            |   0% libiconv-1.15        | 2.0 MB    | ####1      |  41% libiconv-1.15        | 2.0 MB    | ########## | 100% 
+icu-58.2             | 22.6 MB   |            |   0% icu-58.2             | 22.6 MB   | 3          |   4% icu-58.2             | 22.6 MB   | 8          |   9% icu-58.2             | 22.6 MB   | #4         |  14% icu-58.2             | 22.6 MB   | #9         |  19% icu-58.2             | 22.6 MB   | ##4        |  25% icu-58.2             | 22.6 MB   | ##9        |  30% icu-58.2             | 22.6 MB   | ###5       |  35% icu-58.2             | 22.6 MB   | ####       |  40% icu-58.2             | 22.6 MB   | ####5      |  45% icu-58.2             | 22.6 MB   | #####      |  51% icu-58.2             | 22.6 MB   | #####5     |  56% icu-58.2             | 22.6 MB   | ######1    |  61% icu-58.2             | 22.6 MB   | ######6    |  67% icu-58.2             | 22.6 MB   | #######2   |  72% icu-58.2             | 22.6 MB   | #######7   |  77% icu-58.2             | 22.6 MB   | ########2  |  83% icu-58.2             | 22.6 MB   | ########8  |  88% icu-58.2             | 22.6 MB   | #########3 |  93% icu-58.2             | 22.6 MB   | #########8 |  99% icu-58.2             | 22.6 MB   | ########## | 100% 
+python-2.7.13        | 13.8 MB   |            |   0% python-2.7.13        | 13.8 MB   | 6          |   6% python-2.7.13        | 13.8 MB   | #4         |  14% python-2.7.13        | 13.8 MB   | ##2        |  23% python-2.7.13        | 13.8 MB   | ###1       |  32% python-2.7.13        | 13.8 MB   | ####       |  40% python-2.7.13        | 13.8 MB   | ####8      |  49% python-2.7.13        | 13.8 MB   | #####7     |  57% python-2.7.13        | 13.8 MB   | ######5    |  65% python-2.7.13        | 13.8 MB   | #######3   |  74% python-2.7.13        | 13.8 MB   | ########1  |  82% python-2.7.13        | 13.8 MB   | #########  |  90% python-2.7.13        | 13.8 MB   | #########8 |  99% python-2.7.13        | 13.8 MB   | ########## | 100% 
+bedtools-2.25.0      | 728 KB    |            |   0% bedtools-2.25.0      | 728 KB    | 2          |   2% bedtools-2.25.0      | 728 KB    | ##4        |  24% bedtools-2.25.0      | 728 KB    | #########8 |  99% bedtools-2.25.0      | 728 KB    | ########## | 100% 
+ncurses-5.9          | 1.1 MB    |            |   0% ncurses-5.9          | 1.1 MB    | ###        |  31% ncurses-5.9          | 1.1 MB    | ########## | 100% 
+freetype-2.7         | 2.8 MB    |            |   0% freetype-2.7         | 2.8 MB    | ###        |  30% freetype-2.7         | 2.8 MB    | #######3   |  73% freetype-2.7         | 2.8 MB    | ########## | 100% 
+bioconductor-affyio- | 98 KB     |            |   0% bioconductor-affyio- | 98 KB     | ########## | 100% 
+r-reshape2-1.4.3     | 123 KB    |            |   0% r-reshape2-1.4.3     | 123 KB    | ########## | 100% 
+r-rsqlite-2.1.1      | 954 KB    |            |   0% r-rsqlite-2.1.1      | 954 KB    | ####5      |  45% r-rsqlite-2.1.1      | 954 KB    | ########## | 100% 
+bioconductor-annotat | 4.5 MB    |            |   0% bioconductor-annotat | 4.5 MB    | #8         |  19% bioconductor-annotat | 4.5 MB    | ####5      |  45% bioconductor-annotat | 4.5 MB    | #######1   |  72% bioconductor-annotat | 4.5 MB    | #########8 |  99% bioconductor-annotat | 4.5 MB    | ########## | 100% 
+r-foreign-0.8_71     | 270 KB    |            |   0% r-foreign-0.8_71     | 270 KB    | ########## | 100% 
+libxcb-1.13          | 396 KB    |            |   0% libxcb-1.13          | 396 KB    | ########## | 100% 
+r-gtools-3.8.1       | 272 KB    |            |   0% r-gtools-3.8.1       | 272 KB    | ########## | 100% 
+bioconductor-tximpor | 233 KB    |            |   0% bioconductor-tximpor | 233 KB    | ########## | 100% 
+bioconductor-genomei | 3.6 MB    |            |   0% bioconductor-genomei | 3.6 MB    | ##         |  21% bioconductor-genomei | 3.6 MB    | #####4     |  54% bioconductor-genomei | 3.6 MB    | ########7  |  88% bioconductor-genomei | 3.6 MB    | ########## | 100% 
+r-pheatmap-1.0.10    | 52 KB     |            |   0% r-pheatmap-1.0.10    | 52 KB     | ########## | 100% 
+jpeg-9c              | 251 KB    |            |   0% jpeg-9c              | 251 KB    | ########## | 100% 
+ruamel_yaml-0.15.71  | 249 KB    |            |   0% ruamel_yaml-0.15.71  | 249 KB    | ########## | 100% 
+mysql-connector-c-6. | 9.6 MB    |            |   0% mysql-connector-c-6. | 9.6 MB    | 9          |   9% mysql-connector-c-6. | 9.6 MB    | #6         |  17% mysql-connector-c-6. | 9.6 MB    | ##4        |  24% mysql-connector-c-6. | 9.6 MB    | ###7       |  37% mysql-connector-c-6. | 9.6 MB    | ####9      |  50% mysql-connector-c-6. | 9.6 MB    | ######2    |  63% mysql-connector-c-6. | 9.6 MB    | #######5   |  75% mysql-connector-c-6. | 9.6 MB    | ########6  |  87% mysql-connector-c-6. | 9.6 MB    | #########9 |  99% mysql-connector-c-6. | 9.6 MB    | ########## | 100% 
+bioconductor-annotat | 1.9 MB    |            |   0% bioconductor-annotat | 1.9 MB    | ####8      |  48% bioconductor-annotat | 1.9 MB    | ########## | 100% 
+libblas-3.8.0        | 10 KB     |            |   0% libblas-3.8.0        | 10 KB     | ########## | 100% 
+bioconductor-genomic | 1.6 MB    |            |   0% bioconductor-genomic | 1.6 MB    | ####9      |  49% bioconductor-genomic | 1.6 MB    | ########## | 100% 
+r-hexbin-1.27.2      | 710 KB    |            |   0% r-hexbin-1.27.2      | 710 KB    | ########## | 100% 
+ucsc-gtftogenepred-3 | 2.4 MB    |            |   0% ucsc-gtftogenepred-3 | 2.4 MB    |            |   1% ucsc-gtftogenepred-3 | 2.4 MB    | 7          |   7% ucsc-gtftogenepred-3 | 2.4 MB    | ##8        |  28% ucsc-gtftogenepred-3 | 2.4 MB    | ######4    |  64% ucsc-gtftogenepred-3 | 2.4 MB    | ########## | 100% 
+r-yaml-2.2.0         | 103 KB    |            |   0% r-yaml-2.2.0         | 103 KB    | ########## | 100% 
+r-markdown-0.8       | 113 KB    |            |   0% r-markdown-0.8       | 113 KB    | ########## | 100% 
+chardet-3.0.4        | 180 KB    |            |   0% chardet-3.0.4        | 180 KB    | ########## | 100% 
+r-htmltools-0.3.6    | 146 KB    |            |   0% r-htmltools-0.3.6    | 146 KB    | ########## | 100% 
+r-glue-1.3.0         | 94 KB     |            |   0% r-glue-1.3.0         | 94 KB     | ########## | 100% 
+xorg-libxrender-0.9. | 31 KB     |            |   0% xorg-libxrender-0.9. | 31 KB     | ########## | 100% 
+ucsc-genepredtobed-3 | 2.4 MB    |            |   0% ucsc-genepredtobed-3 | 2.4 MB    |            |   1% ucsc-genepredtobed-3 | 2.4 MB    | 7          |   7% ucsc-genepredtobed-3 | 2.4 MB    | ###2       |  33% ucsc-genepredtobed-3 | 2.4 MB    | #######3   |  73% ucsc-genepredtobed-3 | 2.4 MB    | ########## | 100% 
+r-backports-1.1.2    | 53 KB     |            |   0% r-backports-1.1.2    | 53 KB     | ########## | 100% 
+r-stringi-1.2.4      | 715 KB    |            |   0% r-stringi-1.2.4      | 715 KB    | ########## | 100% 
+pyopenssl-19.0.0     | 79 KB     |            |   0% pyopenssl-19.0.0     | 79 KB     | ########## | 100% 
+r-lazyeval-0.2.1     | 132 KB    |            |   0% r-lazyeval-0.2.1     | 132 KB    | ########## | 100% 
+bioconductor-geneplo | 1.4 MB    |            |   0% bioconductor-geneplo | 1.4 MB    | ####2      |  42% bioconductor-geneplo | 1.4 MB    | ########## | 100% 
+libuuid-2.32.1       | 26 KB     |            |   0% libuuid-2.32.1       | 26 KB     | ########## | 100% 
+bioconductor-biocins | 64 KB     |            |   0% bioconductor-biocins | 64 KB     | ########## | 100% 
+xorg-xproto-7.0.31   | 72 KB     |            |   0% xorg-xproto-7.0.31   | 72 KB     | ########## | 100% 
+xorg-libxdmcp-1.1.3  | 18 KB     |            |   0% xorg-libxdmcp-1.1.3  | 18 KB     | ########## | 100% 
+bioconductor-xvector | 446 KB    |            |   0% bioconductor-xvector | 446 KB    | ########## | 100% 
+r-mass-7.3_50        | 1.1 MB    |            |   0% r-mass-7.3_50        | 1.1 MB    | #######3   |  73% r-mass-7.3_50        | 1.1 MB    | ########## | 100% 
+xorg-kbproto-1.0.7   | 26 KB     |            |   0% xorg-kbproto-1.0.7   | 26 KB     | ########## | 100% 
+r-mime-0.5           | 40 KB     |            |   0% r-mime-0.5           | 40 KB     | ########## | 100% 
+r-gtable-0.2.0       | 68 KB     |            |   0% r-gtable-0.2.0       | 68 KB     | ########## | 100% 
+r-labeling-0.3       | 44 KB     |            |   0% r-labeling-0.3       | 44 KB     | ########## | 100% 
+r-lattice-0.20_35    | 726 KB    |            |   0% r-lattice-0.20_35    | 726 KB    | #######2   |  73% r-lattice-0.20_35    | 726 KB    | ########## | 100% 
+libgfortran-ng-7.3.0 | 1.7 MB    |            |   0% libgfortran-ng-7.3.0 | 1.7 MB    | ####1      |  41% libgfortran-ng-7.3.0 | 1.7 MB    | ########## | 100% 
+openssl-1.0.2u       | 3.2 MB    |            |   0% openssl-1.0.2u       | 3.2 MB    | ##7        |  27% openssl-1.0.2u       | 3.2 MB    | ######5    |  66% openssl-1.0.2u       | 3.2 MB    | ########## | 100% 
+requests-2.22.0      | 83 KB     |            |   0% requests-2.22.0      | 83 KB     | ########## | 100% 
+r-checkmate-1.8.5    | 552 KB    |            |   0% r-checkmate-1.8.5    | 552 KB    | ########## | 100% 
+r-lambda.r-1.2.3     | 86 KB     |            |   0% r-lambda.r-1.2.3     | 86 KB     | ########## | 100% 
+ipaddress-1.0.23     | 19 KB     |            |   0% ipaddress-1.0.23     | 19 KB     | ########## | 100% 
+r-nnet-7.3_12        | 128 KB    |            |   0% r-nnet-7.3_12        | 128 KB    | ########## | 100% 
+bioconductor-delayed | 681 KB    |            |   0% bioconductor-delayed | 681 KB    | ########## | 100% 
+r-catools-1.17.1.1   | 175 KB    |            |   0% r-catools-1.17.1.1   | 175 KB    | ########## | 100% 
+pthread-stubs-0.4    | 5 KB      |            |   0% pthread-stubs-0.4    | 5 KB      | ########## | 100% 
+conda-package-handli | 944 KB    |            |   0% conda-package-handli | 944 KB    | ########8  |  88% conda-package-handli | 944 KB    | ########## | 100% 
+curl-7.54.1          | 617 KB    |            |   0% curl-7.54.1          | 617 KB    | ########## | 100% 
+r-rpart-4.1_13       | 912 KB    |            |   0% r-rpart-4.1_13       | 912 KB    | #########4 |  95% r-rpart-4.1_13       | 912 KB    | ########## | 100% 
+bioconductor-zlibbio | 110 KB    |            |   0% bioconductor-zlibbio | 110 KB    | ########## | 100% 
+ucsc-bedgraphtobigwi | 972 KB    |            |   0% ucsc-bedgraphtobigwi | 972 KB    | 1          |   2% ucsc-bedgraphtobigwi | 972 KB    | #8         |  18% ucsc-bedgraphtobigwi | 972 KB    | #######7   |  77% ucsc-bedgraphtobigwi | 972 KB    | ########## | 100% 
+r-matrixstats-0.54.0 | 609 KB    |            |   0% r-matrixstats-0.54.0 | 609 KB    | ########## | 100% 
+r-acepack-1.4.1      | 59 KB     |            |   0% r-acepack-1.4.1      | 59 KB     | ########## | 100% 
+r-digest-0.6.18      | 133 KB    |            |   0% r-digest-0.6.18      | 133 KB    | ########## | 100% 
+r-rlang-0.3.0.1      | 985 KB    |            |   0% r-rlang-0.3.0.1      | 985 KB    | ######9    |  70% r-rlang-0.3.0.1      | 985 KB    | ########## | 100% 
+r-memoise-1.1.0      | 33 KB     |            |   0% r-memoise-1.1.0      | 33 KB     | ########## | 100% 
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+[91m
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.7.12
+  latest version: 4.8.2
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+[0mRemoving intermediate container 719549026cb0
+ ---> 129040075da6
+Step 13/20 : RUN	git clone https://github.com/wyang17/SQuIRE
+ ---> Running in 1e22cfca52a3
+[91mCloning into 'SQuIRE'...
+[0mRemoving intermediate container 1e22cfca52a3
+ ---> a202d74ea950
+Step 14/20 : WORKDIR /SQuIRE
+ ---> Running in 19969ace5f43
+Removing intermediate container 19969ace5f43
+ ---> aa34655d333e
+Step 15/20 : RUN	cd /SQuIRE
+ ---> Running in 95e65c02a4e4
+Removing intermediate container 95e65c02a4e4
+ ---> 9d84d8250fa4
+Step 16/20 : RUN	pip install -e .
+ ---> Running in d0ea1430ca51
+[91mDEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+[0mObtaining file:///SQuIRE
+Collecting pyfaidx
+  Downloading pyfaidx-0.5.8.tar.gz (32 kB)
+Requirement already satisfied: urllib3[secure] in /opt/conda/lib/python2.7/site-packages (from SQuIRE==0.9.9.92) (1.25.7)
+Requirement already satisfied: six in /opt/conda/lib/python2.7/site-packages (from SQuIRE==0.9.9.92) (1.14.0)
+Requirement already satisfied: setuptools>=0.7 in /opt/conda/lib/python2.7/site-packages (from pyfaidx->SQuIRE==0.9.9.92) (44.0.0.post20200102)
+Requirement already satisfied: cryptography>=1.3.4; extra == "secure" in /opt/conda/lib/python2.7/site-packages (from urllib3[secure]->SQuIRE==0.9.9.92) (2.5)
+Requirement already satisfied: pyOpenSSL>=0.14; extra == "secure" in /opt/conda/lib/python2.7/site-packages (from urllib3[secure]->SQuIRE==0.9.9.92) (19.0.0)
+Requirement already satisfied: idna>=2.0.0; extra == "secure" in /opt/conda/lib/python2.7/site-packages (from urllib3[secure]->SQuIRE==0.9.9.92) (2.8)
+Requirement already satisfied: certifi; extra == "secure" in /opt/conda/lib/python2.7/site-packages (from urllib3[secure]->SQuIRE==0.9.9.92) (2019.11.28)
+Requirement already satisfied: ipaddress; python_version == "2.7" and extra == "secure" in /opt/conda/lib/python2.7/site-packages (from urllib3[secure]->SQuIRE==0.9.9.92) (1.0.23)
+Requirement already satisfied: cffi!=1.11.3,>=1.8 in /opt/conda/lib/python2.7/site-packages (from cryptography>=1.3.4; extra == "secure"->urllib3[secure]->SQuIRE==0.9.9.92) (1.13.2)
+Requirement already satisfied: enum34; python_version < "3" in /opt/conda/lib/python2.7/site-packages (from cryptography>=1.3.4; extra == "secure"->urllib3[secure]->SQuIRE==0.9.9.92) (1.1.6)
+Requirement already satisfied: asn1crypto>=0.21.0 in /opt/conda/lib/python2.7/site-packages (from cryptography>=1.3.4; extra == "secure"->urllib3[secure]->SQuIRE==0.9.9.92) (1.3.0)
+Requirement already satisfied: pycparser in /opt/conda/lib/python2.7/site-packages (from cffi!=1.11.3,>=1.8->cryptography>=1.3.4; extra == "secure"->urllib3[secure]->SQuIRE==0.9.9.92) (2.19)
+Building wheels for collected packages: pyfaidx
+  Building wheel for pyfaidx (setup.py): started
+  Building wheel for pyfaidx (setup.py): finished with status 'done'
+  Created wheel for pyfaidx: filename=pyfaidx-0.5.8-py2-none-any.whl size=25050 sha256=8ac70fc8ddb54acbc7acd25419a591926c335d3bb6d1829adf5456af43bf9fee
+  Stored in directory: /root/.cache/pip/wheels/2a/dc/c7/db74fb1d935f16fcb55a2a4614f7451ccc464a620bd701c213
+Successfully built pyfaidx
+Installing collected packages: pyfaidx, SQuIRE
+  Running setup.py develop for SQuIRE
+Successfully installed SQuIRE pyfaidx-0.5.8
+Removing intermediate container d0ea1430ca51
+ ---> 87670ce157fc
+Step 17/20 : RUN	cd /SQuIRE
+ ---> Running in 412ebac45210
+Removing intermediate container 412ebac45210
+ ---> bcaca4c55cfc
+Step 18/20 : RUN	git pull
+ ---> Running in 97090ca0f1bd
+Already up to date.
+Removing intermediate container 97090ca0f1bd
+ ---> 32f1eb0c8e80
+Step 19/20 : COPY  Count.md.py  /SQuIRE/squire/Count.py
+ ---> 7c22c8ce3bd7
+Step 20/20 : RUN apt-get install -y  --reinstall procps
+ ---> Running in cf4f292ee0d2
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libgpm2 libncurses6 libncursesw6 libprocps7 libtinfo6 psmisc
+Suggested packages:
+  gpm
+The following NEW packages will be installed:
+  libgpm2 libncurses6 libprocps7 procps psmisc
+The following packages will be upgraded:
+  libncursesw6 libtinfo6
+2 upgraded, 5 newly installed, 0 to remove and 24 not upgraded.
+Need to get 1041 kB of archives.
+After this operation, 1931 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian buster/main amd64 libtinfo6 amd64 6.1+20181013-2+deb10u2 [325 kB]
+Get:2 http://deb.debian.org/debian buster/main amd64 libncursesw6 amd64 6.1+20181013-2+deb10u2 [132 kB]
+Get:3 http://deb.debian.org/debian buster/main amd64 libncurses6 amd64 6.1+20181013-2+deb10u2 [102 kB]
+Get:4 http://deb.debian.org/debian buster/main amd64 libprocps7 amd64 2:3.3.15-2 [61.7 kB]
+Get:5 http://deb.debian.org/debian buster/main amd64 procps amd64 2:3.3.15-2 [259 kB]
+Get:6 http://deb.debian.org/debian buster/main amd64 libgpm2 amd64 1.20.7-5 [35.1 kB]
+Get:7 http://deb.debian.org/debian buster/main amd64 psmisc amd64 23.2-1 [126 kB]
+Fetched 1041 kB in 19s (55.1 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12687 files and directories currently installed.)
+Preparing to unpack .../libtinfo6_6.1+20181013-2+deb10u2_amd64.deb ...
+Unpacking libtinfo6:amd64 (6.1+20181013-2+deb10u2) over (6.1+20181013-2+deb10u1) ...
+Setting up libtinfo6:amd64 (6.1+20181013-2+deb10u2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12687 files and directories currently installed.)
+Preparing to unpack .../libncursesw6_6.1+20181013-2+deb10u2_amd64.deb ...
+Unpacking libncursesw6:amd64 (6.1+20181013-2+deb10u2) over (6.1+20181013-2+deb10u1) ...
+Setting up libncursesw6:amd64 (6.1+20181013-2+deb10u2) ...
+Selecting previously unselected package libncurses6:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12687 files and directories currently installed.)
+Preparing to unpack .../libncurses6_6.1+20181013-2+deb10u2_amd64.deb ...
+Unpacking libncurses6:amd64 (6.1+20181013-2+deb10u2) ...
+Selecting previously unselected package libprocps7:amd64.
+Preparing to unpack .../libprocps7_2%3a3.3.15-2_amd64.deb ...
+Unpacking libprocps7:amd64 (2:3.3.15-2) ...
+Selecting previously unselected package procps.
+Preparing to unpack .../procps_2%3a3.3.15-2_amd64.deb ...
+Unpacking procps (2:3.3.15-2) ...
+Selecting previously unselected package libgpm2:amd64.
+Preparing to unpack .../libgpm2_1.20.7-5_amd64.deb ...
+Unpacking libgpm2:amd64 (1.20.7-5) ...
+Selecting previously unselected package psmisc.
+Preparing to unpack .../psmisc_23.2-1_amd64.deb ...
+Unpacking psmisc (23.2-1) ...
+Setting up libgpm2:amd64 (1.20.7-5) ...
+Setting up psmisc (23.2-1) ...
+Setting up libprocps7:amd64 (2:3.3.15-2) ...
+Setting up libncurses6:amd64 (6.1+20181013-2+deb10u2) ...
+Setting up procps (2:3.3.15-2) ...
+update-alternatives: using /usr/bin/w.procps to provide /usr/bin/w (w) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/w.1.gz because associated file /usr/share/man/man1/w.procps.1.gz (of link group w) doesn't exist
+Processing triggers for libc-bin (2.28-10) ...
+Removing intermediate container cf4f292ee0d2
+ ---> 8539fbc406de
+Successfully built 8539fbc406de
+Successfully tagged squire.app:latest

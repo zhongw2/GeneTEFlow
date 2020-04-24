@@ -1,0 +1,121 @@
+Sending build context to Docker daemon   1.21MB
+Step 1/40 : FROM ubuntu:16.04
+ ---> 96da9143fb18
+Step 2/40 : LABEL base_image="ubuntu:16.04"
+ ---> Using cache
+ ---> 86b20ec55c87
+Step 3/40 : LABEL about.summary="RNA-seq pipeline (Pfizer confidential)"
+ ---> Using cache
+ ---> a7e5a3ff90ae
+Step 4/40 : LABEL about.license="Pfizer"
+ ---> Using cache
+ ---> 562355c96e4c
+Step 5/40 : LABEL about.tags="Genomics"
+ ---> Using cache
+ ---> 33631af5497a
+Step 6/40 : MAINTAINER Xiaochuan (David) Liu <xiaochuan.liu@pfizer.com>
+ ---> Using cache
+ ---> 4b4cc39e00ba
+Step 7/40 : ENV DEBIAN_FRONTEND=noninteractive
+ ---> Using cache
+ ---> d06b2f45ab57
+Step 8/40 : RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
+ ---> Using cache
+ ---> a6055eda673c
+Step 9/40 : RUN apt-get install -y tzdata
+ ---> Using cache
+ ---> 1e16bc486cf5
+Step 10/40 : RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+ ---> Using cache
+ ---> c5465c097a45
+Step 11/40 : RUN dpkg-reconfigure -f noninteractive tzdata
+ ---> Using cache
+ ---> 37958a142640
+Step 12/40 : RUN  apt-get install --yes  default-jre perl python build-essential gcc-multilib   make gcc g++ zlib1g-dev zlib1g unzip zip wget
+ ---> Using cache
+ ---> 15334719fe04
+Step 13/40 : RUN wget https://repo.anaconda.com/archive/Anaconda2-5.2.0-Linux-x86_64.sh -O Anaconda.sh
+ ---> Using cache
+ ---> 8a6faa596608
+Step 14/40 : RUN bash Anaconda.sh -b -f -p /usr/local
+ ---> Using cache
+ ---> c5d02d21a765
+Step 15/40 : RUN bash /usr/local/bin/activate
+ ---> Using cache
+ ---> 38661b92f221
+Step 16/40 : RUN rm Anaconda.sh
+ ---> Using cache
+ ---> dcf4efa01a39
+Step 17/40 : RUN conda update -n base conda
+ ---> Using cache
+ ---> 93f10a99f708
+Step 18/40 : RUN conda config --system --add channels conda-forge
+ ---> Using cache
+ ---> 379293bbc87c
+Step 19/40 : RUN conda config --system --append channels bioconda
+ ---> Using cache
+ ---> 4d4ea275f480
+Step 20/40 : RUN conda install -c conda-forge r-base=3.4.1
+ ---> Using cache
+ ---> 869cd31a888e
+Step 21/40 : RUN conda install -c conda-forge r-devtools=1.13.5
+ ---> Using cache
+ ---> 3b726878ef9a
+Step 22/40 : RUN conda install -c bioconda fastqc=0.11.7
+ ---> Using cache
+ ---> 8c2bfe7de17a
+Step 23/40 : RUN conda install -c bioconda hisat2=2.1.0
+ ---> Using cache
+ ---> 0ee24477fbc0
+Step 24/40 : RUN conda install -c bioconda samtools=1.3.1
+ ---> Using cache
+ ---> b1ee63fd0073
+Step 25/40 : RUN conda install -c bioconda stringtie=1.3.4
+ ---> Using cache
+ ---> 52020b5dbdba
+Step 26/40 : RUN conda install -c bioconda star=2.6.0c
+ ---> Using cache
+ ---> 0791fb20cb18
+Step 27/40 : RUN conda install -c bioconda rsem=1.3.0
+ ---> Using cache
+ ---> aeeb6c3768af
+Step 28/40 : RUN conda install -c bioconda bioconductor-deseq2=1.18.1
+ ---> Using cache
+ ---> 57ff26f4a1c5
+Step 29/40 : RUN conda install -c conda-forge libiconv=1.15
+ ---> Using cache
+ ---> 464a206cb2f4
+Step 30/40 : RUN conda install -c bioconda bioconductor-tximport=1.8.0
+ ---> Using cache
+ ---> f412c8560cf6
+Step 31/40 : RUN conda install -c conda-forge r-readr=1.1.1
+ ---> Using cache
+ ---> 4a651d3fd453
+Step 32/40 : RUN conda install -c bioconda bioconductor-genomeinfodbdata=1.1.0
+ ---> Using cache
+ ---> e5e0393cac2b
+Step 33/40 : RUN conda install -c conda-forge r-plyr=1.8.4
+ ---> Using cache
+ ---> e2b97df9a549
+Step 34/40 : RUN conda install -c bioconda trimmomatic=0.36
+ ---> Using cache
+ ---> 61720d9df31c
+Step 35/40 : ENV LANG=C
+ ---> Using cache
+ ---> fb0d9130bae0
+Step 36/40 : RUN apt-get install -y locales
+ ---> Using cache
+ ---> 77258f0dd0fd
+Step 37/40 : RUN locale-gen en_US.UTF-8
+ ---> Using cache
+ ---> 7e13b43dbea0
+Step 38/40 : RUN mkdir -p  /RNASeq
+ ---> Using cache
+ ---> 24aa2fda0a43
+Step 39/40 : COPY ngsdb  /RNASeq/ngsdb
+ ---> Using cache
+ ---> 54b7b390f843
+Step 40/40 : COPY scripts  /RNASeq/scripts
+ ---> d1ee7a8587ec
+Successfully built d1ee7a8587ec
+Successfully tagged rnaseq_pipeline.app:latest
