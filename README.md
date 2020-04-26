@@ -53,7 +53,7 @@ GeneTEFlow is a reproducible and platform-independent workflow for the comprehen
  
 ### Section 3: Build images (need &quot;root&quot; permission)
 
-  **Using Dockerfile of GeneTEFlow.Process as an example:**
+  Using Dockerfile of GeneTEFlow.Process as an example:
 
   **# cd GeneTEFlow\_Dockerfiles/GeneTEFlow.Process/**
 
@@ -61,14 +61,15 @@ GeneTEFlow is a reproducible and platform-independent workflow for the comprehen
 
   Ref: [https://docs.docker.com/engine/reference/commandline/build/](https://docs.docker.com/engine/reference/commandline/build/)
 
+&nbsp;
 
 **Optional:**
 
 If you need to run containers by Singularity, another step is required to convert docker images to Singularity images:
 
-# cd /mnt/
+**# cd /mnt/**
 
-# docker run -v /var/run/docker.sock:/var/run/docker.sock -v /mnt:/output --privileged -t --rm singularityware/docker2singularity rnaseq\_pipeline.app
+**# docker run -v /var/run/docker.sock:/var/run/docker.sock -v /mnt:/output --privileged -t --rm singularityware/docker2singularity rnaseq\_pipeline.app**
 
 Ref: [https://github.com/singularityware/docker2singularity](https://github.com/singularityware/docker2singularity)
 
@@ -76,7 +77,10 @@ The output file is a Singularity container under /mnt directory. For example, fi
 
 You may rename it, for example, to &quot;rnaseq\_pipeline.hpc.simg&quot; and run it on High Performance Computing (HPC) clusters by Singularity.
 
-**Section 4: Testing containers**
+&nbsp;
+&nbsp;
+
+###Section 4: Testing containers
 
 Testing the docker container:
 
@@ -90,7 +94,10 @@ $ singularity exec rnaseq\_pipeline.hpc.simg ls /RANSeq
 
 Ref: [https://singularity.lbl.gov/docs-run](https://singularity.lbl.gov/docs-run)
 
-**Section 5: install Nextflow**
+&nbsp;
+&nbsp;
+
+###Section 5: install Nextflow
 
 **Optional:**
 
