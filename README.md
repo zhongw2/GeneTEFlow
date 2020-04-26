@@ -98,32 +98,37 @@ Ref: [https://singularity.lbl.gov/docs-run](https://singularity.lbl.gov/docs-run
 &nbsp;
 
 ### Section 5: install Nextflow
-
+&nbsp;
 **Optional:**
 
 You might need to create a new user account for running nextflow. For instance, create a user account with name: &quot;geneteflow1&quot;:
 
 **# useradd -m geneteflow1 -d /mnt/geneteflow1 -s /bin/bash**
 
-**# passwd geneteflow1 (- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `geneteflow123` geneteflow123 )**
+**# passwd geneteflow1 ( geneteflow123 )**
 
-**Step 1:**
+&nbsp;
+
+**Then:**
 
 Login as user geneteflow1, and install Nextflow on Ubuntu Linux system:
 
-$ cd ~
+**$ cd ~**
 
-$ pwd
+**$ pwd**
 
 /mnt/geneteflow1
 
-$ curl -s https://get.nextflow.io | bash
+**$ curl -s https://get.nextflow.io | bash**
 
-$ ./nextflow run hello
+**$ ./nextflow run hello**
 
 Ref: [https://www.nextflow.io/](https://www.nextflow.io/)
 
-1. **Running GeneTEFlow**
+&nbsp;
+&nbsp;
+
+## 3. Running GeneTEFlow
 
 **Section 1: download reference genome and gtf files**
 
