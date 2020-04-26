@@ -103,9 +103,9 @@ Ref: [https://singularity.lbl.gov/docs-run](https://singularity.lbl.gov/docs-run
 
 You might need to create a new user account for running nextflow. For instance, create a user account with name: &quot;geneteflow1&quot;:
 
-# useradd -m geneteflow1 -d /mnt/geneteflow1 -s /bin/bash
+**# useradd -m geneteflow1 -d /mnt/geneteflow1 -s /bin/bash**
 
-# passwd geneteflow1 (geneteflow123)
+**# passwd geneteflow1 (<font color="red"> geneteflow123 </font>)**
 
 **Step 1:**
 
