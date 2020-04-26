@@ -105,7 +105,7 @@ You might need to create a new user account for running nextflow. For instance, 
 
 **# useradd -m geneteflow1 -d /mnt/geneteflow1 -s /bin/bash**
 
-**# passwd geneteflow1 (- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15` geneteflow123 )**
+**# passwd geneteflow1 (- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `geneteflow123` geneteflow123 )**
 
 **Step 1:**
 
