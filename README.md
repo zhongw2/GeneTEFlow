@@ -151,6 +151,8 @@ You may use &quot;ln -s&quot; command to create the soft links to the original l
 
 Here human RNA sequencing data were downloaded through GEO accession number GSE30352, including brain, heart, and testis data with biological replicates.
 
+&nbsp;
+
 | **Samples** | **GEO number** | **SRR number** |
 | --- | --- | --- |
 | Brain replicate 1 | GSM752691 | SRR306838 |
@@ -161,13 +163,17 @@ Here human RNA sequencing data were downloaded through GEO accession number GSE3
 | Testis replicate 1 | GSM752707 | SRR306857 |
 | Testis replicate 2 | GSM752708 | SRR306858 |
 
-To build small testing data sets, first 1,000,000 reads in each sample was used here.
+&nbsp;
+**To build small testing data sets, first 1,000,000 reads in each sample was used here.**
 
-$zcat ~/original\_locations/hsa.br.F.1\_GSM752691\_R1.fastq.gz |head -n 4000000|gzip \&gt; RAW\_DATA/hsa.br.F.1\_GSM752691\_R1.fastq.gz
+**$zcat ~/original\_locations/hsa.br.F.1\_GSM752691\_R1.fastq.gz |head -n 4000000|gzip \&gt; RAW\_DATA/hsa.br.F.1\_GSM752691\_R1.fastq.gz**
 
-**Section 3: modify the GeneTEFlow configuration file coordinately**
+&nbsp;
+&nbsp;
 
-**Optional 1:**** configuration file for docker container**
+### Section 3: modify the GeneTEFlow configuration file coordinately
+
+**Optional 1: configuration file for docker container**
 
 GeneTEFlow can be run locally by specifying it in the configuration file:
 
