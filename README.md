@@ -9,7 +9,7 @@ GeneTEFlow is a reproducible and platform-independent workflow for the comprehen
 ## 2. Installation
 
 ### Section 1: Install docker and singularity (need &quot;root&quot; permission)
-
+\
   **Step 1:**
 
   Installation of Docker on Ubuntu Linux system:
@@ -24,7 +24,7 @@ GeneTEFlow is a reproducible and platform-independent workflow for the comprehen
 
   /usr/bin/docker
   
-
+\
   **Step 2:**
 
   Installation of Singularity on Ubuntu Linux system:
