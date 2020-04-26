@@ -208,8 +208,9 @@ Specify the details of samples information:
 
 **params.sampleinfoxlsx = &quot;PE\_sampledetail.xlsx&quot;**
 
-&nbsp;
+
 **Please refer more details of configurations on** [https://www.nextflow.io/docs/latest/executor.html](https://www.nextflow.io/docs/latest/executor.html)
+
 &nbsp;
 &nbsp;
 
@@ -247,7 +248,7 @@ Specify the location of RAW data:
 Specify the details of samples information:
 
 **params.sampleinfoxlsx = &quot;PE\_sampledetail.xlsx&quot;**
-&nbsp;
+
 **Please refer more details of configurations on** [https://www.nextflow.io/docs/latest/executor.html](https://www.nextflow.io/docs/latest/executor.html)
 
 &nbsp;
