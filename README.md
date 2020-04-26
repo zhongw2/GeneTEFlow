@@ -170,6 +170,8 @@ Here human RNA sequencing data were downloaded through GEO accession number GSE3
 &nbsp;
 
 ### Section 3: modify the GeneTEFlow configuration file coordinately
+&nbsp;
+&nbsp;
 
 **Optional 1: configuration file for docker container**
 
@@ -181,7 +183,7 @@ GeneTEFlow provides functions to process both single-end and paired-end reads re
 Please see &quot;geneTEflow.SE.docker.config&quot; and &quot;geneTEflow.PE.docker.config&quot;.
 
 &nbsp;
-**Single-end reads:**
+**1. Single-end reads:**
 
 For example,
 
@@ -194,53 +196,62 @@ Specify the details of samples information:
 **params.sampleinfoxlsx = &quot;SE\_Nextflow\_pipeline.Human\_data.xlsx&quot;**
 
 &nbsp;
-**Paired-end reads:**
+**2. Paired-end reads:**
 
 For example,
 
 Specify the location of RAW data:
 
-params.reads = &quot;./RAW\_DATA/\*\_R{1,2}.fastq.gz&quot;
+**params.reads = &quot;./RAW\_DATA/\*\_R{1,2}.fastq.gz&quot;**
 
 Specify the details of samples information:
 
-params.sampleinfoxlsx = &quot;PE\_sampledetail.xlsx&quot;
+**params.sampleinfoxlsx = &quot;PE\_sampledetail.xlsx&quot;**
+
+&nbsp;
+&nbsp;
 
 **Optional 2:**** configuration file for Singularity container**
 
 GeneTEFlow can be run on HPC LSF system by specifying in the configuration:
 
-process.executor = &#39;lsf&#39;
+**process.executor = &#39;lsf&#39;**
 
-GeneTEFlow provides functions can process both single-end and paired-end reads. Please see &quot;geneTEflow.SE.Singularity.config&quot; and &quot;geneTEflow.PE.Singularity.config&quot;.
+GeneTEFlow provides functions can process both single-end and paired-end reads. 
+Please see &quot;geneTEflow.SE.Singularity.config&quot; and &quot;geneTEflow.PE.Singularity.config&quot;.
 
-**Single-end reads:**
-
-For example,
-
-Specify the location of RAW data:
-
-params.reads = &quot;./RAW\_DATA/\*\_R1.fastq.gz&quot;
-
-Specify the details of samples information:
-
-params.sampleinfoxlsx = &quot;SE\_Nextflow\_pipeline.Human\_data.xlsx&quot;
-
-**Paired-end reads:**
+&nbsp;
+**1. Single-end reads:**
 
 For example,
 
 Specify the location of RAW data:
 
-params.reads = &quot;./RAW\_DATA/\*\_R{1,2}.fastq.gz&quot;
+**params.reads = &quot;./RAW\_DATA/\*\_R1.fastq.gz&quot;**
 
 Specify the details of samples information:
 
-params.sampleinfoxlsx = &quot;PE\_sampledetail.xlsx&quot;
+**params.sampleinfoxlsx = &quot;SE\_Nextflow\_pipeline.Human\_data.xlsx&quot;**
+
+&nbsp;
+**2. Paired-end reads:**
+
+For example,
+
+Specify the location of RAW data:
+
+**params.reads = &quot;./RAW\_DATA/\*\_R{1,2}.fastq.gz&quot;**
+
+Specify the details of samples information:
+
+**params.sampleinfoxlsx = &quot;PE\_sampledetail.xlsx&quot;**
 
 **Please refer more details of configurations on** [https://www.nextflow.io/docs/latest/executor.html](https://www.nextflow.io/docs/latest/executor.html)
 
-**Section 4: running GeneTEFlow**
+&nbsp;
+&nbsp;
+
+### Section 4: running GeneTEFlow
 
 **Optional 1:**** running GeneTEFlow by interacting with docker containers**
 
