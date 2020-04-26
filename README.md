@@ -80,7 +80,7 @@ You may rename it, for example, to &quot;rnaseq\_pipeline.hpc.simg&quot; and run
 &nbsp;
 &nbsp;
 
-###Section 4: Testing containers
+### Section 4: Testing containers
 
 Testing the docker container:
 
@@ -97,7 +97,7 @@ Ref: [https://singularity.lbl.gov/docs-run](https://singularity.lbl.gov/docs-run
 &nbsp;
 &nbsp;
 
-###Section 5: install Nextflow
+### Section 5: install Nextflow
 
 **Optional:**
 
