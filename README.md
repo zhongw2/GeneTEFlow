@@ -39,12 +39,16 @@ GeneTEFlow is a reproducible and platform-independent workflow for the comprehen
 
   /usr/local/bin/singularity
   
+\
+\
+### Section 2: Getting GeneTEflow from github:
 
-###Section 2: Getting GeneTEflow from github:
-
-# git clone [https://github.com/zhongw2/GeneTEFlow](https://github.com/zhongw2/GeneTEFlow)
-
-**Section 3: Build images (**_ **need &quot;root&quot; permission** _**)**
+ **# git clone [https://github.com/zhongw2/GeneTEFlow](https://github.com/zhongw2/GeneTEFlow)**
+ 
+ \
+ \
+ 
+### Section 3: Build images (**_ **need &quot;root&quot; permission** _**)**
 
 **Using Dockerfile of GeneTEFlow.Process as an example:**
 
