@@ -40,22 +40,27 @@ GeneTEFlow is a reproducible and platform-independent workflow for the comprehen
   /usr/local/bin/singularity
   
 
+&nbsp;
+&nbsp;
+
 
 ### Section 2: Getting GeneTEflow from github:
 
  **# git clone [https://github.com/zhongw2/GeneTEFlow](https://github.com/zhongw2/GeneTEFlow)**
  
-
+&nbsp;
+&nbsp;
  
-### Section 3: Build images (**_ **need &quot;root&quot; permission** _**)**
+### Section 3: Build images (need &quot;root&quot; permission)
 
-**Using Dockerfile of GeneTEFlow.Process as an example:**
+  **Using Dockerfile of GeneTEFlow.Process as an example:**
 
-# cd GeneTEFlow\_Dockerfiles/GeneTEFlow.Process/
+  **# cd GeneTEFlow\_Dockerfiles/GeneTEFlow.Process/**
 
-# docker build -t rnaseq\_pipeline.app .
+  **# docker build -t rnaseq\_pipeline.app .**
 
-Ref: [https://docs.docker.com/engine/reference/commandline/build/](https://docs.docker.com/engine/reference/commandline/build/)
+  Ref: [https://docs.docker.com/engine/reference/commandline/build/](https://docs.docker.com/engine/reference/commandline/build/)
+
 
 **Optional:**
 
