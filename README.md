@@ -113,8 +113,6 @@ You might need to create a new user account for running nextflow. For instance, 
 
 Login as user geneteflow1, and install Nextflow on Ubuntu Linux system:
 
- **$ cd ~/ **
-
 **$ pwd**
 
 /mnt/geneteflow1
@@ -130,21 +128,24 @@ Ref: [https://www.nextflow.io/](https://www.nextflow.io/)
 
 ## 3. Running GeneTEFlow
 
-**Section 1: download reference genome and gtf files**
+### Section 1: download reference genome and gtf files
 
 Human reference genome UCSC hg38 with the gene annotation (.gtf) were downloaded from illumina iGenomes collections : [https://support.illumina.com/sequencing/sequencing\_software/igenome.html](https://support.illumina.com/sequencing/sequencing_software/igenome.html)
 
-$ wget [http://igenomes.illumina.com.s3-website-us-east-1.amazonaws.com/Homo\_sapiens/UCSC/hg38/Homo\_sapiens\_UCSC\_hg38.tar.gz](http://igenomes.illumina.com.s3-website-us-east-1.amazonaws.com/Homo_sapiens/UCSC/hg38/Homo_sapiens_UCSC_hg38.tar.gz)
+**$ wget [http://igenomes.illumina.com.s3-website-us-east-1.amazonaws.com/Homo\_sapiens/UCSC/hg38/Homo\_sapiens\_UCSC\_hg38.tar.gz](http://igenomes.illumina.com.s3-website-us-east-1.amazonaws.com/Homo_sapiens/UCSC/hg38/Homo_sapiens_UCSC_hg38.tar.gz)**
 
-$ tar xzvf Homo\_sapiens\_UCSC\_hg38.tar.gz
+**$ tar xzvf Homo\_sapiens\_UCSC\_hg38.tar.gz**
 
-$ cp Homo\_sapiens/UCSC/hg38/Sequence/WholeGenomeFasta/genome.fa .
+**$ cp Homo\_sapiens/UCSC/hg38/Sequence/WholeGenomeFasta/genome.fa .**
 
-$ cp Homo\_sapiens/UCSC/hg38/Annotation/Genes/genes.gtf .
+**$ cp Homo\_sapiens/UCSC/hg38/Annotation/Genes/genes.gtf .**
 
-**Section 2: collect all illumia raw data (.fastq.gz) into one folder**
+&nbsp;
+&nbsp;
 
-$ mkdir RAW\_DATA/
+### Section 2: collect all illumia raw data (.fastq.gz) into one folder
+
+**$ mkdir RAW\_DATA/**
 
 You may use &quot;ln -s&quot; command to create the soft links to the original locations of raw data.
 
