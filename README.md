@@ -84,13 +84,13 @@ You may rename it, for example, to &quot;rnaseq\_pipeline.hpc.simg&quot; and run
 
 Testing the docker container:
 
-$ docker run rnaseq\_pipeline.app ls /RANSeq
+**$ docker run rnaseq\_pipeline.app ls /RANSeq**
 
 Ref: [https://docs.docker.com/engine/reference/commandline/run/](https://docs.docker.com/engine/reference/commandline/run/)
 
 Testing the Singularity container:
 
-$ singularity exec rnaseq\_pipeline.hpc.simg ls /RANSeq
+**$ singularity exec rnaseq\_pipeline.hpc.simg ls /RANSeq**
 
 Ref: [https://singularity.lbl.gov/docs-run](https://singularity.lbl.gov/docs-run)
 
