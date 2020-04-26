@@ -132,7 +132,7 @@ Ref: [https://www.nextflow.io/](https://www.nextflow.io/)
 
 Human reference genome UCSC hg38 with the gene annotation (.gtf) were downloaded from illumina iGenomes collections : [https://support.illumina.com/sequencing/sequencing\_software/igenome.html](https://support.illumina.com/sequencing/sequencing_software/igenome.html)
 
-**$ wget [http://igenomes.illumina.com.s3-website-us-east-1.amazonaws.com/Homo\_sapiens/UCSC/hg38/Homo\_sapiens\_UCSC\_hg38.tar.gz]**
+**$ wget http://igenomes.illumina.com.s3-website-us-east-1.amazonaws.com/Homo\_sapiens/UCSC/hg38/Homo\_sapiens\_UCSC\_hg38.tar.gz**
 
 **$ tar xzvf Homo\_sapiens\_UCSC\_hg38.tar.gz**
 
