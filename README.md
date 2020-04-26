@@ -10,35 +10,37 @@ GeneTEFlow is a reproducible and platform-independent workflow for the comprehen
 
 ### Section 1: Install docker and singularity (need &quot;root&quot; permission)
 
-**Step 1:**
+  **Step 1:**
 
-Installation of Docker on Ubuntu Linux system:
+  Installation of Docker on Ubuntu Linux system:
 
-**# apt-get install docker-ce**
+  **# apt-get install docker-ce**
 
-**# docker --version**
+  **# docker --version**
 
-Docker version 18.03.1-ce, build 9ee9f40
+  Docker version 18.03.1-ce, build 9ee9f40
 
-**# which docker**
+  **# which docker**
 
-/usr/bin/docker
+  /usr/bin/docker
+  
 
-**Step 2:**
+  **Step 2:**
 
-Installation of Singularity on Ubuntu Linux system:
+  Installation of Singularity on Ubuntu Linux system:
 
-# apt-get install singularity-container
+  **# apt-get install singularity-container**
 
-# singularity --version
+  **# singularity --version**
 
-2.5.1-master.gd6e81547
+  2.5.1-master.gd6e81547
 
-# which singularity
+  **# which singularity**
 
-/usr/local/bin/singularity
+  /usr/local/bin/singularity
+  
 
-**Section 2: Getting GeneTEflow from github:**
+###Section 2: Getting GeneTEflow from github:
 
 # git clone [https://github.com/zhongw2/GeneTEFlow](https://github.com/zhongw2/GeneTEFlow)
 
