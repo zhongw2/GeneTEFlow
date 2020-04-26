@@ -151,8 +151,6 @@ You may use &quot;ln -s&quot; command to create the soft links to the original l
 
 Here human RNA sequencing data were downloaded through GEO accession number GSE30352, including brain, heart, and testis data with biological replicates.
 
-&nbsp;
-
 | **Samples** | **GEO number** | **SRR number** |
 | --- | --- | --- |
 | Brain replicate 1 | GSM752691 | SRR306838 |
