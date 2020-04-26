@@ -175,22 +175,25 @@ Here human RNA sequencing data were downloaded through GEO accession number GSE3
 
 GeneTEFlow can be run locally by specifying it in the configuration file:
 
-process.executor = &#39;local&#39;
+**process.executor = &#39;local&#39;**
 
-GeneTEFlow provides functions to process both single-end and paired-end reads respectively. Please see &quot;geneTEflow.SE.docker.config&quot; and &quot;geneTEflow.PE.docker.config&quot;.
+GeneTEFlow provides functions to process both single-end and paired-end reads respectively. 
+Please see &quot;geneTEflow.SE.docker.config&quot; and &quot;geneTEflow.PE.docker.config&quot;.
 
+&nbsp;
 **Single-end reads:**
 
 For example,
 
 Specify the location of RAW data:
 
-params.reads = &quot;./RAW\_DATA/\*\_R1.fastq.gz&quot;
+**params.reads = &quot;./RAW\_DATA/\*\_R1.fastq.gz&quot;**
 
 Specify the details of samples information:
 
-params.sampleinfoxlsx = &quot;SE\_Nextflow\_pipeline.Human\_data.xlsx&quot;
+**params.sampleinfoxlsx = &quot;SE\_Nextflow\_pipeline.Human\_data.xlsx&quot;**
 
+&nbsp;
 **Paired-end reads:**
 
 For example,
