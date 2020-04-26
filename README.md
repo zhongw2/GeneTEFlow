@@ -113,7 +113,7 @@ You might need to create a new user account for running nextflow. For instance, 
 
 Login as user geneteflow1, and install Nextflow on Ubuntu Linux system:
 
-**$ cd ~
+__$ cd ~__
 
 **$ pwd**
 
