@@ -211,7 +211,7 @@ Specify the details of samples information:
 &nbsp;
 &nbsp;
 
-**Optional 2:**** configuration file for Singularity container**
+**Optional 2: configuration file for Singularity container**
 
 GeneTEFlow can be run on HPC LSF system by specifying in the configuration:
 
