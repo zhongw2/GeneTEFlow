@@ -289,9 +289,7 @@ Here human RNA sequencing data (GSE30352) were used as one example.
 
 **Significantly regulated genes identified by GeneTEFlow:**
 
-![](RackMultipart20200426-4-1giptgo_html_40c804c4c93b90d5.png) ![](RackMultipart20200426-4-1giptgo_html_6e81520a395fe167.png)
-
-![](RackMultipart20200426-4-1giptgo_html_473e375ffcc843b4.png)
+![genes](./images/genes.png)
 
 **Significantly regulated transposable elements identified by GeneTEFlow:**
 
