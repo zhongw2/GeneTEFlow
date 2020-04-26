@@ -164,7 +164,7 @@ Here human RNA sequencing data were downloaded through GEO accession number GSE3
 &nbsp;
 **To build small testing data sets, first 1,000,000 reads in each sample was used here.**
 
-**$zcat ~/original\_locations/hsa.br.F.1\_GSM752691\_R1.fastq.gz |head -n 4000000|gzip \&gt; RAW\_DATA/hsa.br.F.1\_GSM752691\_R1.fastq.gz**
+**$zcat ~/original\_locations/hsa.br.F.1\_GSM752691\_R1.fastq.gz |head -n 4000000|gzip > RAW\_DATA/hsa.br.F.1\_GSM752691\_R1.fastq.gz**
 
 &nbsp;
 &nbsp;
