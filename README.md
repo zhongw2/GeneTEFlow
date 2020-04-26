@@ -2,13 +2,13 @@
 
 ## 1. Introduction
 
-GeneTEFlow is a reproducible and platform-independent workflow, for the comprehensive analysis of gene and locus-specific TEs expression from RNA-Seq data using Nextflow and Docker technologies.
+GeneTEFlow is a reproducible and platform-independent workflow for the comprehensive analysis of gene and locus-specific TEs expression from RNA-Seq data using Nextflow and Docker technologies.
 
 ![workflow](https://user-images.githubusercontent.com/16296165/80311919-67947d80-87b0-11ea-819d-8d22b68abe56.png)
 
-1. **Installation**
+## 2. Installation
 
-**Section 1: Install docker and singularity (**_ **need &quot;root&quot; permission** _**)**
+### Section 1: Install docker and singularity (**_ **need &quot;root&quot; permission** _**)**
 
 **Step 1:**
 
