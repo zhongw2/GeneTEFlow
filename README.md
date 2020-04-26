@@ -1,8 +1,10 @@
-# GeneTEFlow
+# GeneTEFlow: A Nextflow-based one-stop pipeline for differential expression analysis of genes and locus-specific transposable elements from RNA sequencing
 
-1. **Introduction**
+##1. Introduction
 
 GeneTEFlow is a reproducible and platform-independent workflow, for the comprehensive analysis of gene and locus-specific TEs expression from RNA-Seq data using Nextflow and Docker technologies.
+
+![workflow](https://user-images.githubusercontent.com/16296165/80311919-67947d80-87b0-11ea-819d-8d22b68abe56.png)
 
 1. **Installation**
 
