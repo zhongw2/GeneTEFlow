@@ -124,7 +124,7 @@ process RSEMwithSTAR {
     set pair_id, "*.RSEM_Output.STAR.log" into RSEMresult_STAR_log
  
     """    
-    $params.rsem  -p  $params.cpu   --sort-bam-by-coordinate  --keep-intermediate-files    --star    --star-gzipped-read-file    ${pair_id}_1.clipped.fastq.gz      index_folder/GRChg38_UCSC  ${pair_id}.RSEM_Output  >  ${pair_id}.RSEM.log  2> ${pair_id}.RSEM.err.log
+    $params.rsem  -p  $params.cpu  --forward-prob $params.rsem.forwardprob  --sort-bam-by-coordinate  --keep-intermediate-files    --star    --star-gzipped-read-file    ${pair_id}_1.clipped.fastq.gz      index_folder/GRChg38_UCSC  ${pair_id}.RSEM_Output  >  ${pair_id}.RSEM.log  2> ${pair_id}.RSEM.err.log
  
     cp ${pair_id}.RSEM_Output.stat/${pair_id}.RSEM_Output.cnt  ${pair_id}.RSEM_Output.cnt
     cp ${pair_id}.RSEM_Output.temp/${pair_id}.RSEM_OutputLog.final.out  ${pair_id}.RSEM_Output.STAR.log
@@ -363,7 +363,7 @@ if (params.TE_pipeline_run_tag == "Y" ) {
          file "squire_fetch" into squire_fetch
 
          """
-         squire Fetch  -c -b  hg38  -f -r -g -x -p $params.cpu  -v >squire_Fetch.log   2>squire_Fetch.err.log
+         squire Fetch  -c -b  $params.squireFetch.genome  -f -r -g -x -p $params.cpu  -v >squire_Fetch.log   2>squire_Fetch.err.log
          """
 
      }
@@ -378,7 +378,7 @@ if (params.TE_pipeline_run_tag == "Y" ) {
          file "squire_clean" into squire_clean
 
          """
-         squire Clean  -b  hg38   -v >squire_Clean.log   2>squire_Clean.err.log
+         squire Clean  -b  $params.squireFetch.genome   -v >squire_Clean.log   2>squire_Clean.err.log
          """
 
      }
@@ -396,7 +396,7 @@ if (params.TE_pipeline_run_tag == "Y" ) {
          set pair_id, "*.squire_map_folder" into squire_map
 
          """
-         squire  Map  -1   ${pair_id}_1.clipped.fastq.gz      -o  ${pair_id}.squire_map_folder  -r  150  -n  ${pair_id}  -b  hg38   --gtf  squire_fetch/hg38_refGene.gtf  -p  $params.cpu  -v  >squire_Map_${pair_id}.log  2>squire_Map_${pair_id}.err.log
+         squire  Map  -1   ${pair_id}_1.clipped.fastq.gz      -o  ${pair_id}.squire_map_folder  -r  150  -n  ${pair_id}  -b  $params.squireFetch.genome   --gtf  squire_fetch/hg38_refGene.gtf  -p  $params.cpu  -v  >squire_Map_${pair_id}.log  2>squire_Map_${pair_id}.err.log
          """
 
      }
@@ -415,7 +415,7 @@ if (params.TE_pipeline_run_tag == "Y" ) {
          set pair_id, "*.TE_countTable.txt" into squire_TE1,squire_TE2
 
          """
-         squire  Count  -m ${pair_id}.squire_map_folder   -o  ${pair_id}.squire_count_folder   -r  150 -n  ${pair_id}   -b  hg38   -s 1  -p  $params.cpu  -v>squire_Count_${pair_id}.log  2>squire_Count_${pair_id}.err.log
+         squire  Count  -m ${pair_id}.squire_map_folder   -o  ${pair_id}.squire_count_folder   -r  150 -n  ${pair_id}   -b  $params.squireFetch.genome   -s 1  -p  $params.cpu  -v>squire_Count_${pair_id}.log  2>squire_Count_${pair_id}.err.log
          
          cat ${pair_id}.squire_count_folder/${pair_id}_TEcounts.txt|cut -f 4,16 >  ${pair_id}.TE_countTable.txt
          """
