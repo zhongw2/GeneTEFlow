@@ -1,4 +1,4 @@
-#!/afs/grid.pfizer.com/biolomics/bioinfo/zhongw2/download/R/R-3.2.0/bin/Rscript
+#!/bin/Rscript
 #
 # This script generates summary information of statistically regulated genes
 # from DESeq2 analysis
