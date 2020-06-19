@@ -296,7 +296,7 @@ if ((params.DESeq_run_tag == "Y" ) && (params.analysis_pipeline_run_tag == "Y"))
          file "*.pdf" into outputpdf
 
          """    
-         Rscript $params.sigGene_cmd $deseqout  $tpmdata  $sampleinfotxt  $samplecomparetxt  0.05  1  50  >    sigGene.log   2>&1
+         Rscript $params.sigGene_cmd $deseqout  $tpmdata  $sampleinfotxt  $samplecomparetxt  $params.deseq.fdr.gene  $params.deseq.log2FC.gene  $params.deseq.gmean.gene  >    sigGene.log   2>&1
          """
 
     }
