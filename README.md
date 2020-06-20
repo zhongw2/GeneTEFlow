@@ -312,7 +312,7 @@ GeneTEFlow generates three major log files: nf.report.html, nf.timeline.html, an
 
 ## 4. Q & A Section
 
-**1: Can I use a different human genome version (eg. hg19) or a different species (eg. mouse) in GeneTEFlow pipeline? If yes, please provide some instructions to do those. Eg. where to download the genome and gene annotation file.**
+**1. Can I use a different human genome version (eg. hg19) or a different species (eg. mouse) in GeneTEFlow pipeline? If yes, please provide some instructions to do those. Eg. where to download the genome and gene annotation file.**
 
 Yes, you could choose your specific species and genome version. 
 
@@ -328,9 +328,12 @@ Mouse reference genome UCSC mm10 with the gene annotation (.gtf) were downloaded
 **$ cp Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf .**
 
 &nbsp;
+&nbsp;
 Also, you need to change parameter “params.squireFetch.genome” (Please see "Configuration Parameters" section)
+&nbsp;
 **params.squireFetch.genome = mm10**
-Which would instruct SQuIRE to download mm10-related reference genome and TE annotations.
+&nbsp;
+It would instruct SQuIRE to download mm10-related reference genome and TE annotations.
 
 &nbsp;
 &nbsp;
