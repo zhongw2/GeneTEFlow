@@ -172,19 +172,32 @@ Here human RNA sequencing data were downloaded through GEO accession number GSE3
 ### Section 3: modify the GeneTEFlow configuration file coordinately
 &nbsp;
 &nbsp;
-\
 #### Parameters Configuration
 These parameters below would be editable in the configuration file so that researchers could manually change these settings according to the type of their RNA-Seq. 
 
-| **Samples** | **GEO number** | **SRR number** |
-| --- | --- | --- |
-| Brain replicate 1 | GSM752691 | SRR306838 |
-| Brain replicate 2 | GSM752694 | SRR306841 |
-| Brain replicate 3 | GSM752692 | SRR306839 |
-| Heart replicate 1 | GSM752699 | SRR306847 |
-| Heart replicate 2 | GSM752701 | SRR306850 |
-| Testis replicate 1 | GSM752707 | SRR306857 |
-| Testis replicate 2 | GSM752708 | SRR306858 |
+
+| **Name** | **Example/Default value** | **Description** |
+|-----------|--------------:|-------------|
+|--input_folder | `.` | input folder |
+|--species | `human` | Your species, mouse, fly and zebra fish are also supported |
+|--fastq_ext | `*_{1,2}.fastq.gz` | input raw paired reads |
+|--out_folder |  `.` | output folder |
+|--design     | `FALSE` | a txt file that stored experimental design information, plz see details from `--design` section below |
+|--input_folder | `.` | input folder |
+|--species | `human` | Your species, mouse, fly and zebra fish are also supported |
+|--fastq_ext | `*_{1,2}.fastq.gz` | input raw paired reads |
+|--out_folder |  `.` | output folder |
+|--design     | `FALSE` | a txt file that stored experimental design information, plz see details from `--design` section below |
+|--input_folder | `.` | input folder |
+|--species | `human` | Your species, mouse, fly and zebra fish are also supported |
+|--fastq_ext | `*_{1,2}.fastq.gz` | input raw paired reads |
+|--out_folder |  `.` | output folder |
+|--design     | `FALSE` | a txt file that stored experimental design information, plz see details from `--design` section below |
+|--input_folder | `.` | input folder |
+|--species | `human` | Your species, mouse, fly and zebra fish are also supported |
+|--fastq_ext | `*_{1,2}.fastq.gz` | input raw paired reads |
+|--out_folder |  `.` | output folder |
+|--design     | `FALSE` | a txt file that stored experimental design information, plz see details from `--design` section below |
 
 &nbsp;
 
