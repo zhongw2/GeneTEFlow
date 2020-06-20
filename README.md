@@ -330,6 +330,7 @@ $ cp Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf .
 ```
 &nbsp;
 &nbsp;
+\
 Also, you need to change parameter “params.squireFetch.genome” (Please see "Configuration Parameters" section)
 &nbsp;
 ```
