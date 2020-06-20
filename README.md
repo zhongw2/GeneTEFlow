@@ -340,6 +340,7 @@ It would instruct SQuIRE to download mm10-related reference genome and TE annota
 
 &nbsp;
 &nbsp;
+\
 ***2. Can I run GeneTEFlow pipeline in a step-by-step mode and how?***
 
 Yes, the pipeline could be run in a step-by-step mode.
