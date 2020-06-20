@@ -309,8 +309,6 @@ GeneTEFlow generates three major log files: nf.report.html, nf.timeline.html, an
 &nbsp;
 &nbsp;
 
-## Q & A Section:
-
 
 ## 4. Q & A Section
 
