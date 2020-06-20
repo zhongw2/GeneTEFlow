@@ -320,24 +320,36 @@ Here we use Mus musculus (Mouse) mm10 as one example:
 Mouse reference genome UCSC mm10 with the gene annotation (.gtf) were downloaded from illumina iGenomes collections : [https://support.illumina.com/sequencing/sequencing\_software/igenome.html](https://support.illumina.com/sequencing/sequencing_software/igenome.html)
 
 ```
-**$ wget http://igenomes.illumina.com.s3-website-us-east-1.amazonaws.com/Mus_musculus/UCSC/mm10/Mus_musculus_UCSC_mm10.tar.gz**
+$ wget http://igenomes.illumina.com.s3-website-us-east-1.amazonaws.com/Mus_musculus/UCSC/mm10/Mus_musculus_UCSC_mm10.tar.gz
 
-**$ tar xzvf Mus_musculus_UCSC_mm10.tar.gz**
+$ tar xzvf Mus_musculus_UCSC_mm10.tar.gz
 
-**$ cp Mus_musculus/UCSC/mm10/Sequence/WholeGenomeFasta/genome.fa .**
+$ cp Mus_musculus/UCSC/mm10/Sequence/WholeGenomeFasta/genome.fa .
 
-**$ cp Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf .**
+$ cp Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf .
 ```
 &nbsp;
 &nbsp;
 Also, you need to change parameter “params.squireFetch.genome” (Please see "Configuration Parameters" section)
 &nbsp;
 ```
-**params.squireFetch.genome = mm10**
+params.squireFetch.genome = mm10
 ```
 &nbsp;
 It would instruct SQuIRE to download mm10-related reference genome and TE annotations.
 
 &nbsp;
 &nbsp;
+***2. Can I run GeneTEFlow pipeline in a step-by-step mode and how?***
 
+Yes, the pipeline could be run in a step-by-step mode.
+
+For example, if you may already have bam files, you could perform the analysis for the quantification of gene expression with RSEM directly, and skip the alignment step with STAR.
+&nbsp;
+The command line is below:
+&nbsp;
+```
+$docker run   -v  /your_working_directory:/mnt   -w /mnt    rnaseq_pipeline.app   rsem-calculate-expression  --bam --no-bam-output -p 8   --paired-end  /mnt/your.bam  /mnt/RSEMIndex_hg38_UCSC/hg38_UCSC    /mnt/RSEM_Output   
+```
+&nbsp;
+&nbsp;
