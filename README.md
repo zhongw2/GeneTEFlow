@@ -346,7 +346,7 @@ Yes, the pipeline could be run in a step-by-step mode.
 
 For example, if you may already have bam files, you could perform the analysis for the quantification of gene expression with RSEM directly, and skip the alignment step with STAR.
 &nbsp;
-The command line is below:
+**The command line is below:**
 &nbsp;
 ```
 $docker run   -v  /your_working_directory:/mnt   -w /mnt    rnaseq_pipeline.app   rsem-calculate-expression  --bam --no-bam-output -p 8   --paired-end  /mnt/your.bam  /mnt/RSEMIndex_hg38_UCSC/hg38_UCSC    /mnt/RSEM_Output   
