@@ -170,8 +170,7 @@ Here human RNA sequencing data were downloaded through GEO accession number GSE3
 &nbsp;
 
 ### Section 3: modify the GeneTEFlow configuration file coordinately
-&nbsp;
-&nbsp;
+
 #### Parameters Configuration
 These parameters below would be editable in the configuration file so that researchers could manually change these settings according to the type of their RNA-Seq. 
 
