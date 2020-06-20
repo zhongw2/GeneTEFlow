@@ -350,7 +350,6 @@ For example, if you may already have bam files, you could perform the analysis f
 \
 \
 **The command line is below:**
-\
 ```
 $docker run   -v  /your_working_directory:/mnt   -w /mnt    rnaseq_pipeline.app   rsem-calculate-expression  --bam --no-bam-output -p 8   --paired-end  /mnt/your.bam  /mnt/RSEMIndex_hg38_UCSC/hg38_UCSC    /mnt/RSEM_Output   
 ```
