@@ -181,9 +181,9 @@ These parameters below would be editable in the configuration file so that resea
 |params.adapter_trim_tag | `Y` | specify to run adapter trimming : "Y"(yes) or "N"(no) |
 |params.DESeq_run_tag | `Y` | specify to run DESeq2 for differetial expression analysis : "Y"(yes) or "N"(no) |
 |params.DESeq_replicates |  `Y` | specify to run DESeq2 with/without replicates: "Y"(with replicates) or "N"(without replicates)  |
-|--design     | `FALSE` | a txt file that stored experimental design information, plz see details from `--design` section below |
-|--input_folder | `.` | input folder |
-|--species | `human` | Your species, mouse, fly and zebra fish are also supported |
+|params.sampleinfoxlsx | `sampledetail.xlsx` | specify a EXCEL file that stored RNA-Seq samples information |
+|params.sample.manifest.sheetname | `sample.manifest` | The sheet name in EXCEL file for each RNA-Seq sample information |
+|params.samplecompare.sheetname | `samplecompare` | The sheet name in EXCEL file for defining RNA-Seq sample comparisons |
 |--fastq_ext | `*_{1,2}.fastq.gz` | input raw paired reads |
 |--out_folder |  `.` | output folder |
 |--design     | `FALSE` | a txt file that stored experimental design information, plz see details from `--design` section below |
