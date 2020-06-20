@@ -176,7 +176,7 @@ These parameters below would be editable in the configuration file so that resea
 
 
 | **Name** | **Example/Default value** | **Description** |
-|-----------|--------------:|-------------|
+|-----------|----------------------------|---------------------------|
 |--input_folder | `.` | input folder |
 |--species | `human` | Your species, mouse, fly and zebra fish are also supported |
 |--fastq_ext | `*_{1,2}.fastq.gz` | input raw paired reads |
