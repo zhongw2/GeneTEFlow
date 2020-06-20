@@ -306,3 +306,34 @@ GeneTEFlow generates three major log files: nf.report.html, nf.timeline.html, an
 
 ![cpu](./images/cpu.png)
 
+&nbsp;
+&nbsp;
+
+## Q & A Section:
+
+
+## 4. Q & A Section
+
+**1: Can I use a different human genome version (eg. hg19) or a different species (eg. mouse) in GeneTEFlow pipeline? If yes, please provide some instructions to do those. Eg. where to download the genome and gene annotation file.**
+
+Yes, you could choose your specific species and genome version. 
+
+Here we use Mus musculus (Mouse) mm10 as one example:
+Mouse reference genome UCSC mm10 with the gene annotation (.gtf) were downloaded from illumina iGenomes collections : [https://support.illumina.com/sequencing/sequencing\_software/igenome.html](https://support.illumina.com/sequencing/sequencing_software/igenome.html)
+
+**$ wget http://igenomes.illumina.com.s3-website-us-east-1.amazonaws.com/Mus_musculus/UCSC/mm10/Mus_musculus_UCSC_mm10.tar.gz**
+
+**$ tar xzvf Mus_musculus_UCSC_mm10.tar.gz**
+
+**$ cp Mus_musculus/UCSC/mm10/Sequence/WholeGenomeFasta/genome.fa .**
+
+**$ cp Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf .**
+
+&nbsp;
+Also, you need to change parameter “params.squireFetch.genome” (Please see "Configuration Parameters" section)
+**params.squireFetch.genome = mm10**
+Which would instruct SQuIRE to download mm10-related reference genome and TE annotations.
+
+&nbsp;
+&nbsp;
+
