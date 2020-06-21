@@ -185,11 +185,11 @@ These parameters below would be editable in the configuration file so that resea
 |params.sample.manifest.sheetname | `sample.manifest` | The sheet name in EXCEL file for each RNA-Seq sample information |
 |params.samplecompare.sheetname | `samplecompare` | The sheet name in EXCEL file for defining RNA-Seq sample comparisons |
 |params.rsem.forwardprob | `0.5` | specify the strand specific information for read alignment &nbsp; (Please refer RSEM parameter “--forward-prob” by the link http://deweylab.biostat.wisc.edu/rsem/rsem-calculate-expression.html)|
-|--out_folder |  `.` | output folder |
-|--design     | `FALSE` | a txt file that stored experimental design information, plz see details from `--design` section below |
-|--input_folder | `.` | input folder |
-|--species | `human` | Your species, mouse, fly and zebra fish are also supported |
-|--fastq_ext | `*_{1,2}.fastq.gz` | input raw paired reads |
+|params.deseq.log2FC.gene |  `1` | specify the cut off of log2 based foldchange for identifying differential gene expression |
+|params.deseq.fdr.gene | `0.05` | specify the cut off of adjusted P-vlaue for identifying differential gene expression |
+|params.deseq.gmean.gene | `50` | specify the cut off of max counts of group mean in DESeq2 result to filter out some low expressed genes |
+|params.gtf | `hg38.genes.gtf` | specify the GTF annotation file for the analysis of differential gene expression |
+|params.fasta | `hg38.genome.fa` | specify the reference genome for the analysis of differential gene expression |
 |--out_folder |  `.` | output folder |
 |--design     | `FALSE` | a txt file that stored experimental design information, plz see details from `--design` section below |
 |--input_folder | `.` | input folder |
