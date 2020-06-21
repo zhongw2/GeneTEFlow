@@ -188,10 +188,13 @@ These parameters below would be editable in the configuration file so that resea
 |params.deseq.log2FC.gene |  `1` | specify the cut off of log2 based foldchange for identifying differential gene expression |
 |params.deseq.fdr.gene | `0.05` | specify the cut off of adjusted P-vlaue for identifying differential gene expression |
 |params.deseq.gmean.gene | `50` | specify the cut off of max counts of group mean in DESeq2 result to filter out some low expressed genes |
-|params.gtf | `hg38.genes.gtf` | specify the GTF annotation file for the analysis of differential gene expression |
-|params.fasta | `hg38.genome.fa` | specify the reference genome for the analysis of differential gene expression |
-|--out_folder |  `.` | output folder |
-|--design     | `FALSE` | a txt file that stored experimental design information, plz see details from `--design` section below |
+|params.gtf | `genes.gtf` | specify the GTF annotation file for the analysis of differential gene expression |
+|params.fasta | `genome.fa` | specify the reference genome for the analysis of differential gene expression |
+|params.TE_pipeline_run_tag |  `Y` | specify to run the analysis for identifying differential TE expression : "Y"(yes) or "N"(no) |
+|params.deseq.log2FC.TE |  `1` | specify the cut off of log2 based foldchange for identifying differential TE expression |
+|params.deseq.fdr.TE | `0.05` | specify the cut off of adjusted P-vlaue for identifying differential TE expression |
+|params.deseq.gmean.TE | `50` | specify the cut off of max counts of group mean in DESeq2 result to filter out some low expressed TEs |
+|params.squireFetch.genome | `hg38` | specify the reference genome versions: hg38, hg19, mm10, mm9, etc. &nbsp; (Please refer SQuIRE "squire Fetch" by the link https://github.com/wyang17/SQuIRE#arguments-for-each-step) |
 |--input_folder | `.` | input folder |
 |--species | `human` | Your species, mouse, fly and zebra fish are also supported |
 |--fastq_ext | `*_{1,2}.fastq.gz` | input raw paired reads |
