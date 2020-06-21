@@ -184,7 +184,7 @@ These parameters below would be editable in the configuration file so that resea
 |params.sampleinfoxlsx | `sampledetail.xlsx` | specify a EXCEL file that stored RNA-Seq samples information |
 |params.sample.manifest.sheetname | `sample.manifest` | The sheet name in EXCEL file for each RNA-Seq sample information |
 |params.samplecompare.sheetname | `samplecompare` | The sheet name in EXCEL file for defining RNA-Seq sample comparisons |
-|--fastq_ext | `*_{1,2}.fastq.gz` | input raw paired reads |
+|params.rsem.forwardprob | `0.5` | specify the strand specific information for read alignment &nbsp; (Please refer RSEM parameter “--forward-prob” by the link http://deweylab.biostat.wisc.edu/rsem/rsem-calculate-expression.html)|
 |--out_folder |  `.` | output folder |
 |--design     | `FALSE` | a txt file that stored experimental design information, plz see details from `--design` section below |
 |--input_folder | `.` | input folder |
