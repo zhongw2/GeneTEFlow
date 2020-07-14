@@ -398,7 +398,7 @@ More intelligent way running in a step-by-step mode: For example, we could run Q
 \
 **The command line is below:**
 ```
-$ ~/nextflow run ~/GeneTEflow\_pipelines/pipeline.SE.QC.nf -c ~/GeneTEflow\_pipelines/geneTEflow.SE.docker.QC.config -with-dag flowchart.html -with-report nf.report.html -with-timeline nf.timeline.html
+$ ~/nextflow run ~/GeneTEflow_pipelines/pipeline.SE.QC.nf -c ~/GeneTEflow_pipelines/geneTEflow.SE.docker.QC.config -with-dag flowchart.html -with-report nf.report.html -with-timeline nf.timeline.html
 ```
 &nbsp;
 
@@ -407,7 +407,7 @@ After you check the QC results, you could remove some low-quality samples, and t
 \
 **The command line is below:**
 ```
-$~/nextflow run ~/GeneTEflow\_pipelines/pipeline.SE.afterQC.nf -c ~/GeneTEflow\_pipelines/geneTEflow.SE.docker.afterQC.config -with-dag flowchart.html -with-report nf.report.html -with-timeline nf.timeline.html
+$~/nextflow run ~/GeneTEflow_pipelines/pipeline.SE.afterQC.nf -c ~/GeneTEflow_pipelines/geneTEflow.SE.docker.afterQC.config -with-dag flowchart.html -with-report nf.report.html -with-timeline nf.timeline.html
 ```
 &nbsp;
 &nbsp;
