@@ -377,7 +377,11 @@ It would instruct SQuIRE to download mm10-related reference genome and TE annota
 ***2. Can I run GeneTEFlow pipeline in a step-by-step mode and how?***
 
 Yes, the pipeline could be run flexibly in a step-by-step mode.
-
+&nbsp;
+&nbsp;
+## (1) Example 1
+&nbsp;
+&nbsp;
 For example, if you may already have bam files, you could perform the analysis for the quantification of gene expression with RSEM directly, and skip the alignment step with STAR.
 &nbsp;
 &nbsp;
@@ -389,11 +393,14 @@ $docker run   -v  /your_working_directory:/mnt   -w /mnt    rnaseq_pipeline.app 
 ```
 &nbsp;
 &nbsp;
-
+&nbsp;
+&nbsp;
+## (2) Example 2
+&nbsp;
+&nbsp;
 More intelligent way running in a step-by-step mode: For example, we could run QC first, removing some low-quality samples, and then continue downstream analysis. 
 &nbsp;
 &nbsp;
-\
 \
 **The command line is below:**
 ```
@@ -401,11 +408,10 @@ $ ~/nextflow run ~/GeneTEflow\_pipelines/pipeline.SE.QC.nf -c ~/GeneTEflow\_pipe
 ```
 &nbsp;
 &nbsp;
-After you check the QC results, you could remove some low-quality samples, and then continue downstream analysis.
 
+After you check the QC results, you could remove some low-quality samples, and then continue downstream analysis.
 &nbsp;
 &nbsp;
-\
 \
 **The command line is below:**
 ```
