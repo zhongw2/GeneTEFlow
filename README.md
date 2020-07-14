@@ -184,7 +184,7 @@ These parameters below would be editable in the configuration file so that resea
 |params.sampleinfoxlsx | `sampledetail.xlsx` | specify a EXCEL file that stored RNA-Seq samples information |
 |params.sample.manifest.sheetname | `sample.manifest` | The sheet name in EXCEL file for each RNA-Seq sample information |
 |params.samplecompare.sheetname | `samplecompare` | The sheet name in EXCEL file for defining RNA-Seq sample comparisons |
-|params.rsem.forwardprob | `0.5` | specify the strand specific information for read alignment &nbsp; (Please refer RSEM parameter “--forward-prob” by the link http://deweylab.biostat.wisc.edu/rsem/rsem-calculate-expression.html)|
+|params.forwardprob | `0.5` | specify the strand specific information for read alignment &nbsp; (Please refer RSEM parameter “--forward-prob” by the link http://deweylab.biostat.wisc.edu/rsem/rsem-calculate-expression.html)|
 |params.deseq.log2FC.gene |  `1` | specify the cut off of log2 based foldchange for identifying differential gene expression |
 |params.deseq.fdr.gene | `0.05` | specify the cut off of adjusted P-vlaue for identifying differential gene expression |
 |params.deseq.gmean.gene | `50` | specify the cut off of max counts of group mean in DESeq2 result to filter out some low expressed genes |
