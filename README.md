@@ -379,13 +379,10 @@ It would instruct SQuIRE to download mm10-related reference genome and TE annota
 Yes, the pipeline could be run flexibly in a step-by-step mode.
 &nbsp;
 &nbsp;
-### (1) Example 1
-&nbsp;
+#### (1) Example 1
 &nbsp;
 For example, if you may already have bam files, you could perform the analysis for the quantification of gene expression with RSEM directly, and skip the alignment step with STAR.
 &nbsp;
-&nbsp;
-\
 \
 **The command line is below:**
 ```
@@ -393,14 +390,10 @@ $docker run   -v  /your_working_directory:/mnt   -w /mnt    rnaseq_pipeline.app 
 ```
 &nbsp;
 &nbsp;
-&nbsp;
-&nbsp;
-### (2) Example 2
-&nbsp;
-&nbsp;
 
-More intelligent way running in a step-by-step mode: For example, we could run QC first, removing some low-quality samples, and then continue downstream analysis. 
+#### (2) Example 2
 &nbsp;
+More intelligent way running in a step-by-step mode: For example, we could run QC first, removing some low-quality samples, and then continue downstream analysis. 
 &nbsp;
 \
 **The command line is below:**
@@ -408,10 +401,8 @@ More intelligent way running in a step-by-step mode: For example, we could run Q
 $ ~/nextflow run ~/GeneTEflow\_pipelines/pipeline.SE.QC.nf -c ~/GeneTEflow\_pipelines/geneTEflow.SE.docker.QC.config -with-dag flowchart.html -with-report nf.report.html -with-timeline nf.timeline.html
 ```
 &nbsp;
-&nbsp;
 
 After you check the QC results, you could remove some low-quality samples, and then continue downstream analysis.
-&nbsp;
 &nbsp;
 \
 **The command line is below:**
