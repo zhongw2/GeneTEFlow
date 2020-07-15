@@ -126,7 +126,7 @@ process RSEMwithSTAR {
     set pair_id, "*.RSEM_Output.STAR.log" into RSEMresult_STAR_log
  
     """    
-    $params.rsem  -p  $params.cpu   --forward-prob $params.rsem.forwardprob  --sort-bam-by-coordinate  --keep-intermediate-files   --forward-prob 0  --paired-end  --star   --star-gzipped-read-file       ${pair_id}_1.clipped.fastq.gz   ${pair_id}_2.clipped.fastq.gz   index_folder/GRChg38_UCSC   ${pair_id}.RSEM_Output  >  ${pair_id}.RSEM.log  2> ${pair_id}.RSEM.err.log
+    $params.rsem  -p  $params.cpu   --forward-prob $params.forwardprob  --sort-bam-by-coordinate  --keep-intermediate-files   --forward-prob 0  --paired-end  --star   --star-gzipped-read-file       ${pair_id}_1.clipped.fastq.gz   ${pair_id}_2.clipped.fastq.gz   index_folder/GRChg38_UCSC   ${pair_id}.RSEM_Output  >  ${pair_id}.RSEM.log  2> ${pair_id}.RSEM.err.log
  
     cp ${pair_id}.RSEM_Output.stat/${pair_id}.RSEM_Output.cnt  ${pair_id}.RSEM_Output.cnt
     cp ${pair_id}.RSEM_Output.temp/${pair_id}.RSEM_OutputLog.final.out  ${pair_id}.RSEM_Output.STAR.log
