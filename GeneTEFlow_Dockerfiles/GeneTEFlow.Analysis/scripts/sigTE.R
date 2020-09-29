@@ -98,7 +98,7 @@ for ( i in 1:totalcompare )
 	sig.f<-!is.na(allDE[,ratio.i]) & !is.na(allDE[,fdr.i]) & allDE[,fdr.i]<=fdr.cutoff & (allDE[,ratio.i]>=ratio.cutoff | allDE[,ratio.i]<=-ratio.cutoff) & group.mean$maxmean >=mean.cutoff
 	sig<-allDE[sig.f,]
 	sig.up<-sig[sig[,ratio.i] >= ratio.cutoff,]
-	sig.down<-sig[sig[,ratio.i] < -ratio.cutoff,]
+	sig.down<-sig[sig[,ratio.i] <= -ratio.cutoff,]
 	sig.i.sum<-data.frame("UP"=nrow(sig.up), "DOWN"=nrow(sig.down), "Total"=nrow(sig) )
 	sig.sum<-rbind(sig.sum, sig.i.sum)
 	siggene.i<-sig$TEid
