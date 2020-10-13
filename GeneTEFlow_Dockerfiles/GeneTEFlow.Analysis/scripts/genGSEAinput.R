@@ -1,11 +1,3 @@
-#!/home/zhongw2/afsproject/download/R/R-3.2.0/bin/Rscript
-#
-# this script generates input file for GSEA based on preranked gene list 
-#	ranking method: signed log10 pvalue
-# Author: Wenyan Zhong
-# Last modified date: 07/09/2018
-#
-
 # Input files
 args = commandArgs(TRUE)
 
