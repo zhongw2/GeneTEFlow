@@ -1,10 +1,3 @@
-#!/home/zhongw2/afsproject/download/R/R-3.2.0/bin/Rscript
-#
-# this script generates input file for GSEA based on tpm value 
-# Author: Wenyan Zhong
-# Last modified date: 07/09/2018
-#
-
 ## input files
 args = commandArgs(TRUE)
 
