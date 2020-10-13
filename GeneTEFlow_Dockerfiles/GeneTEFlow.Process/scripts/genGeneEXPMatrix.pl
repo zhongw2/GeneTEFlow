@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-#my $RSEMDIR="/afs/grid.pfizer.com/biolomics/bioinfo/zhongw2/projects/ngs.projects/trametinib.01262018/bin";
+
 my $rsemdatadir=$ARGV[0];  # top dir directory
 my $sampleinfofile=$ARGV[1];
 my $datatype=$ARGV[2];
