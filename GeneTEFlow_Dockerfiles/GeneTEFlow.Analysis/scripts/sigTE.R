@@ -1,10 +1,3 @@
-#!/bin/Rscript
-#
-# This script generates summary information of statistically regulated genes
-# from DESeq2 analysis
-# Author: Wenyan Zhong
-# last revision date: 07/09/2018
-# run it in the */results directory  
 #
 library(reshape2)
 library(ggplot2)
